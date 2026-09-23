@@ -1,1 +1,1166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Il viaggio di Martina ❤️</title>
+
+  <meta name="description" content="Un piccolo viaggio, una grande sorpresa. Bologna, 3 giorni insieme.">
+
+  <style>
+    :root {
+      --cream: #f8f3ec;
+      --paper: #fffdf9;
+      --dark: #292521;
+      --brown: #765548;
+      --terracotta: #a65d48;
+      --gold: #b9975b;
+      --soft: #e9ddd2;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(185,151,91,.13), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(166,93,72,.10), transparent 35%),
+        var(--cream);
+    }
+
+    .hero-content {
+      max-width: 700px;
+      animation: fadeUp 1.4s ease forwards;
+    }
+
+    .small-title {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      color: var(--brown);
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 12vw, 110px);
+      font-weight: normal;
+      line-height: .95;
+      color: var(--terracotta);
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(20px, 4vw, 28px);
+      font-style: italic;
+      color: var(--brown);
+      margin-bottom: 35px;
+    }
+
+    .hero-date {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 45px;
+      color: #6e625b;
+    }
+
+    .heart {
+      font-size: 38px;
+      display: block;
+      margin-bottom: 30px;
+      animation: heartbeat 2s infinite;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--terracotta);
+      padding: 14px 30px;
+      border-radius: 40px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: .3s ease;
+      box-shadow: 0 8px 25px rgba(166,93,72,.22);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(166,93,72,.30);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8b7c73;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 100px 20px;
+      text-align: center;
+      background: var(--paper);
+    }
+
+    .section-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      margin-bottom: 15px;
+    }
+
+    .intro h2,
+    .day h2,
+    .finale h2 {
+      font-size: clamp(34px, 6vw, 54px);
+      font-weight: normal;
+      color: var(--brown);
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 19px;
+      color: #625850;
+    }
+
+    /* =========================
+       ITINERARIO
+    ========================= */
+
+    .itinerary {
+      padding: 90px 20px;
+    }
+
+    .day {
+      max-width: 900px;
+      margin: 0 auto 100px;
+    }
+
+    .day-header {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .day-number {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .day-description {
+      font-style: italic;
+      color: #776b64;
+      font-size: 17px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: auto;
+      max-width: 720px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 91px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--soft);
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 75px 32px 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .time {
+      text-align: right;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--terracotta);
+      padding-top: 2px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      margin-top: 5px;
+      margin-left: 10px;
+      z-index: 2;
+      box-shadow: 0 0 0 5px var(--cream);
+    }
+
+    .event-card {
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(118,85,72,.10);
+      border-radius: 14px;
+      padding: 16px 20px;
+      transition: .25s ease;
+    }
+
+    .event-card:hover {
+      transform: translateX(4px);
+      background: var(--paper);
+      box-shadow: 0 10px 30px rgba(80,50,40,.07);
+    }
+
+    .event-title {
+      font-size: 19px;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .event-description {
+      font-size: 14px;
+      color: #776b64;
+      font-family: Arial, sans-serif;
+    }
+
+    .special .event-card {
+      border-color: rgba(185,151,91,.35);
+      background: rgba(185,151,91,.08);
+    }
+
+    .special .event-title::after {
+      content: " ♥";
+      color: var(--terracotta);
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote {
+      padding: 100px 25px;
+      text-align: center;
+      background: var(--brown);
+      color: white;
+    }
+
+    .quote p {
+      max-width: 700px;
+      margin: auto;
+      font-size: clamp(24px, 5vw, 38px);
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+
+    /* =========================
+       PLACEHOLDER SECTIONS
+    ========================= */
+
+    .extra {
+      padding: 90px 20px;
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 850px;
+      margin: 45px auto 0;
+    }
+
+    .extra-card {
+      padding: 35px 25px;
+      border: 1px solid var(--soft);
+      border-radius: 18px;
+      background: var(--cream);
+    }
+
+    .extra-card .icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .extra-card h3 {
+      color: var(--brown);
+      font-weight: normal;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .extra-card p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #756a63;
+    }
+
+    /* =========================
+       FINALE
+    ========================= */
+
+    .finale {
+      padding: 130px 25px;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(185,151,91,.13), transparent 50%),
+        var(--cream);
+    }
+
+    .finale p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 19px;
+      color: #655a53;
+    }
+
+    .big-heart {
+      font-size: 55px;
+      margin-bottom: 25px;
+      animation: heartbeat 2.2s infinite;
+    }
+
+    .signature {
+      font-size: 23px;
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      background: #241f1c;
+      color: rgba(255,255,255,.55);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      10% {
+        transform: scale(1.15);
+      }
+
+      20% {
+        transform: scale(1);
+      }
+
+      30% {
+        transform: scale(1.10);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+
+      .hero {
+        min-height: 100svh;
+      }
+
+      .intro,
+      .itinerary,
+      .extra,
+      .finale {
+        padding-top: 75px;
+        padding-bottom: 75px;
+      }
+
+      .timeline::before {
+        left: 67px;
+      }
+
+      .event {
+        grid-template-columns: 52px 30px 1fr;
+        gap: 10px;
+      }
+
+      .time {
+        font-size: 11px;
+      }
+
+      .dot {
+        margin-left: 9px;
+      }
+
+      .event-card {
+        padding: 14px 15px;
+      }
+
+      .event-title {
+        font-size: 17px;
+      }
+
+      .event-description {
+        font-size: 12px;
+      }
+
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quote {
+        padding: 80px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <span class="small-title">
+        Un piccolo viaggio
+      </span>
+
+      <span class="heart">♥</span>
+
+      <h1>Martina</h1>
+
+      <p class="hero-subtitle">
+        preparati, si parte.
+      </p>
+
+      <p class="hero-date">
+        Roma → Bologna<br>
+        Venerdì · Sabato · Domenica
+      </p>
+
+      <a href="#viaggio" class="button">
+        Scopri il viaggio
+      </a>
+
+    </div>
+
+    <div class="scroll-hint">
+      ↓
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       INTRO
+  ========================== -->
+
+  <section class="intro" id="viaggio">
+
+    <div class="section-inner">
+
+      <div class="eyebrow">
+        Il nostro weekend
+      </div>
+
+      <h2>
+        Tre giorni a Bologna
+      </h2>
+
+      <p>
+        Un treno, una città da scoprire, tanti posti dove mangiare
+        e soprattutto un po' di tempo tutto per noi.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ITINERARIO
+  ========================== -->
+
+  <main class="itinerary">
+
+
+    <!-- VENERDÌ -->
+
+    <section class="day">
+
+      <div class="day-header">
+
+        <span class="day-number">
+          Giorno 01 · Venerdì
+        </span>
+
+        <h2>
+          Si parte
+        </h2>
+
+        <p class="day-description">
+          Roma, Bologna e il primo assaggio del weekend.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="event">
+
+          <div class="time">09:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Roma → Bologna
+            </div>
+
+            <div class="event-description">
+              Si parte in treno. 🚆
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">11:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Arrivo a Bologna
+            </div>
+
+            <div class="event-description">
+              Primo giro per iniziare a conoscere la città.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">13:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Primo pranzo bolognese
+            </div>
+
+            <div class="event-description">
+              Perché a Bologna si comincia dalle cose importanti. 🍝
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">14:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Check-in
+            </div>
+
+            <div class="event-description">
+              Sistemiamo le cose e ci prepariamo per il pomeriggio.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">15:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Bologna da scoprire
+            </div>
+
+            <div class="event-description">
+              Piazza Maggiore · Fontana del Nettuno · Portici
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event special">
+
+          <div class="time">20:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Cena con tortellini
+            </div>
+
+            <div class="event-description">
+              La prima vera cena bolognese del nostro viaggio.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SABATO -->
+
+    <section class="day">
+
+      <div class="day-header">
+
+        <span class="day-number">
+          Giorno 02 · Sabato
+        </span>
+
+        <h2>
+          Bologna insieme
+        </h2>
+
+        <p class="day-description">
+          La giornata più piena. E forse anche quella più speciale.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <div class="event">
+
+          <div class="time">09:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Colazione
+            </div>
+
+            <div class="event-description">
+              Un buon caffè e si riparte. ☕
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">10:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Centro storico & Torri
+            </div>
+
+            <div class="event-description">
+              Passeggiata nel cuore di Bologna e visita alle sue famose torri.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">13:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Pranzo bolognese
+            </div>
+
+            <div class="event-description">
+              Un'altra tappa fondamentale del nostro tour gastronomico. 🍝
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">15:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Finestrella di Via Piella
+            </div>
+
+            <div class="event-description">
+              Uno degli angoli più particolari e romantici della città.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">16:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              San Luca
+            </div>
+
+            <div class="event-description">
+              Passeggiata sotto i portici verso il Santuario. ⛪
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">18:30</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Aperitivo
+            </div>
+
+            <div class="event-description">
+              Un momento per fermarsi, bere qualcosa e goderci la serata. 🍹
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event special">
+
+          <div class="time">20:30</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Cena romantica
+            </div>
+
+            <div class="event-description">
+              Questa parte del programma la lasciamo un po' più segreta. ❤️
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- DOMENICA -->
+
+    <section class="day">
+
+      <div class="day-header">
+
+        <span class="day-number">
+          Giorno 03 · Domenica
+        </span>
+
+        <h2>
+          Gli ultimi momenti
+        </h2>
+
+        <p class="day-description">
+          Ancora qualche ora prima di tornare a casa.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <div class="event">
+
+          <div class="time">09:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Colazione
+            </div>
+
+            <div class="event-description">
+              L'ultima colazione bolognese. ☕
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">10:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Ultima passeggiata
+            </div>
+
+            <div class="event-description">
+              Portici · Ghetto · Via Zamboni e gli ultimi angoli da scoprire.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="time">13:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Ultimo pranzo bolognese
+            </div>
+
+            <div class="event-description">
+              Perché un weekend a Bologna non può finire senza un ultimo pranzo. 🍝
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event special">
+
+          <div class="time">16:00</div>
+
+          <div class="dot"></div>
+
+          <div class="event-card">
+
+            <div class="event-title">
+              Bologna → Roma
+            </div>
+
+            <div class="event-description">
+              Si torna a casa. Ma con qualche ricordo in più. 🚆
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       FRASE
+  ========================== -->
+
+  <section class="quote">
+
+    <p>
+      "Tre giorni passano in fretta.
+      Ma quello che ci portiamo a casa rimane."
+    </p>
+
+    <span>
+      ❤️
+    </span>
+
+  </section>
+
+
+  <!-- =========================
+       EXTRA
+  ========================== -->
+
+  <section class="extra">
+
+    <div class="section-inner">
+
+      <div class="eyebrow">
+        Il viaggio
+      </div>
+
+      <h2>
+        Ancora qualche dettaglio...
+      </h2>
+
+      <div class="extra-grid">
+
+
+        <div class="extra-card">
+
+          <div class="icon">🏨</div>
+
+          <h3>
+            Dove dormiamo
+          </h3>
+
+          <p>
+            Qui aggiungeremo il nome dell'hotel,
+            l'indirizzo e il collegamento alla mappa.
+          </p>
+
+        </div>
+
+
+        <div class="extra-card">
+
+          <div class="icon">🗺️</div>
+
+          <h3>
+            La nostra Bologna
+          </h3>
+
+          <p>
+            Una mappa con tutti i luoghi
+            che visiteremo durante il weekend.
+          </p>
+
+        </div>
+
+
+        <div class="extra-card">
+
+          <div class="icon">🎫</div>
+
+          <h3>
+            Il tuo voucher
+          </h3>
+
+          <p>
+            Qui potremo inserire il voucher
+            digitale del viaggio.
+          </p>
+
+        </div>
+
+
+        <div class="extra-card">
+
+          <div class="icon">📸</div>
+
+          <h3>
+            I nostri ricordi
+          </h3>
+
+          <p>
+            Questa sezione potrà diventare
+            il piccolo album del nostro viaggio.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FINALE
+  ========================== -->
+
+  <section class="finale">
+
+    <div class="big-heart">
+      ♥
+    </div>
+
+    <h2>
+      Pronta a partire?
+    </h2>
+
+    <p>
+      Il programma è pronto.
+      La città ci aspetta.
+      Adesso manca solo una cosa...
+    </p>
+
+    <div class="signature">
+      Tu. ❤️
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    Un piccolo viaggio per una persona speciale · 2026
+
+  </footer>
+
+
+</body>
+</html>
