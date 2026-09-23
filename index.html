@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Martina — Preparati, si parte ❤️</title>
-  <meta name="description" content="Tre giorni a Bologna. Un viaggio tutto per noi.">
+  <title>Un weekend tutto per noi ❤️</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,18 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-
-    :root {
-      --cream: #f6efe4;
-      --cream-dark: #eadbc7;
-      --brown: #4a3025;
-      --brown-light: #725242;
-      --terracotta: #a65d43;
-      --gold: #b28a54;
-      --white: #fffaf3;
-      --shadow: rgba(74, 48, 37, 0.14);
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -36,25 +23,23 @@
     }
 
     body {
-      background: var(--cream);
-      color: var(--brown);
+      background: #f7f1e8;
+      color: #4b3428;
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      line-height: 1.7;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    h1,
-    h2,
-    h3,
-    .serif {
+    h1, h2, h3 {
       font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
       min-height: 100vh;
@@ -62,8 +47,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 40px 20px;
       position: relative;
-      padding: 60px 20px;
       overflow: hidden;
     }
 
@@ -72,101 +57,73 @@
       position: absolute;
       width: 500px;
       height: 500px;
+      background: rgba(181, 126, 88, 0.08);
       border-radius: 50%;
-      background: rgba(178,138,84,.08);
       top: -180px;
-      left: -180px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: rgba(166,93,67,.06);
-      bottom: -180px;
-      right: -150px;
+      right: -180px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
       max-width: 850px;
-      animation: fadeUp 1.3s ease forwards;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1.2s ease;
     }
 
-    .small-label {
+    .small-title {
       text-transform: uppercase;
       letter-spacing: 4px;
-      font-size: 11px;
-      color: var(--terracotta);
-      margin-bottom: 18px;
-      font-weight: 500;
+      font-size: 12px;
+      color: #9b7054;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(72px, 13vw, 150px);
-      line-height: .8;
-      font-weight: 500;
-      margin-bottom: 30px;
+      font-size: clamp(55px, 10vw, 110px);
+      line-height: 0.9;
+      color: #704a36;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: 0.55em;
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 15px;
     }
 
     .hero-subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 5vw, 48px);
-      font-style: italic;
-      margin-bottom: 30px;
+      max-width: 600px;
+      margin: 0 auto 35px;
+      font-size: 15px;
+      color: #765c4b;
     }
 
-    .route {
-      display: inline-flex;
-      align-items: center;
-      gap: 15px;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brown-light);
-    }
-
-    .route-line {
-      width: 55px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero-days {
-      margin-top: 35px;
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--brown-light);
+    .heart {
+      font-size: 32px;
+      margin-bottom: 20px;
+      animation: heartbeat 2s infinite;
     }
 
     .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 10px;
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--brown-light);
-      animation: float 2.5s ease-in-out infinite;
+      color: #9b7054;
     }
 
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
+    /* GENERAL */
 
     section {
-      padding: 100px 20px;
+      padding: 90px 20px;
     }
 
     .container {
       max-width: 1050px;
-      margin: 0 auto;
+      margin: auto;
     }
 
     .section-label {
@@ -174,63 +131,39 @@
       text-transform: uppercase;
       letter-spacing: 4px;
       font-size: 11px;
-      color: var(--terracotta);
-      margin-bottom: 12px;
+      color: #a27658;
+      margin-bottom: 10px;
     }
 
     .section-title {
       text-align: center;
-      font-size: clamp(42px, 7vw, 70px);
-      font-weight: 500;
-      line-height: 1;
-      margin-bottom: 25px;
+      font-size: clamp(40px, 7vw, 65px);
+      color: #704a36;
+      margin-bottom: 55px;
     }
 
-    .section-intro {
-      max-width: 650px;
-      margin: 0 auto 70px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--brown-light);
-    }
-
-
-    /* =========================
-       INTRO
-    ========================= */
+    /* INTRO */
 
     .intro {
-      background: var(--white);
+      background: #efe5d8;
+      text-align: center;
     }
 
     .intro-text {
-      text-align: center;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
-    }
-
-    .intro-text p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(25px, 4vw, 36px);
-      line-height: 1.35;
+      font-size: 27px;
+      line-height: 1.45;
+      color: #634636;
     }
 
-    .heart {
-      display: block;
-      margin-top: 35px;
-      color: var(--terracotta);
-      font-size: 24px;
-    }
-
-
-    /* =========================
-       TIMELINE
-    ========================= */
+    /* ITINERARY */
 
     .timeline {
       position: relative;
       max-width: 850px;
-      margin: 0 auto;
+      margin: auto;
     }
 
     .timeline::before {
@@ -240,147 +173,108 @@
       top: 0;
       bottom: 0;
       width: 1px;
-      background: var(--cream-dark);
+      background: #c9ad94;
       transform: translateX(-50%);
     }
 
     .day {
-      margin-bottom: 100px;
-      position: relative;
+      margin-bottom: 80px;
     }
 
-    .day:last-child {
-      margin-bottom: 0;
-    }
-
-    .day-header {
+    .day-title {
       text-align: center;
-      margin-bottom: 45px;
       position: relative;
       z-index: 2;
+      margin-bottom: 35px;
     }
 
-    .day-number {
-      display: inline-flex;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      background: var(--brown);
-      color: var(--cream);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      margin-bottom: 15px;
-      box-shadow: 0 8px 25px var(--shadow);
-    }
-
-    .day-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      font-weight: 500;
-    }
-
-    .day-date {
-      font-size: 11px;
-      letter-spacing: 2px;
+    .day-title span {
+      display: inline-block;
+      background: #f7f1e8;
+      padding: 8px 24px;
+      border: 1px solid #c9ad94;
+      border-radius: 50px;
       text-transform: uppercase;
-      color: var(--brown-light);
-      margin-top: 3px;
+      letter-spacing: 3px;
+      font-size: 11px;
+      color: #8d634a;
     }
 
-    .event {
+    .timeline-item {
       width: 50%;
-      padding: 0 45px 40px;
+      padding: 0 35px 35px;
       position: relative;
     }
 
-    .event:nth-child(odd) {
+    .timeline-item:nth-child(odd) {
+      text-align: right;
+      margin-left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
       margin-left: 50%;
     }
 
-    .event:nth-child(even) {
-      text-align: right;
-    }
-
-    .event::after {
-      content: "";
+    .timeline-dot {
       position: absolute;
-      top: 7px;
       width: 9px;
       height: 9px;
+      background: #a66d4e;
       border-radius: 50%;
-      background: var(--terracotta);
-      border: 3px solid var(--cream);
-      box-sizing: content-box;
+      top: 7px;
     }
 
-    .event:nth-child(odd)::after {
-      left: -6px;
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -4px;
     }
 
-    .event:nth-child(even)::after {
-      right: -6px;
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -4px;
     }
 
-    .event-time {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--terracotta);
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-
-    .event-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 29px;
-      font-weight: 600;
-      line-height: 1.15;
-      margin-bottom: 5px;
-    }
-
-    .event-description {
+    .time {
       font-size: 12px;
-      color: var(--brown-light);
-      line-height: 1.6;
+      letter-spacing: 2px;
+      color: #a27658;
+      margin-bottom: 5px;
+      font-weight: 600;
     }
 
+    .event {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      color: #624333;
+    }
 
-    /* =========================
-       QUOTE
-    ========================= */
+    /* QUOTE */
 
     .quote-section {
-      background: var(--brown);
-      color: var(--cream);
+      background: #704a36;
+      color: #f7f1e8;
       text-align: center;
-      padding: 120px 20px;
     }
 
     .quote {
       max-width: 800px;
       margin: auto;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(34px, 6vw, 58px);
-      line-height: 1.15;
+      font-size: clamp(30px, 5vw, 48px);
       font-style: italic;
+      line-height: 1.2;
     }
 
     .quote-author {
-      margin-top: 30px;
-      font-size: 10px;
+      margin-top: 25px;
+      font-size: 11px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      opacity: .7;
+      opacity: 0.75;
     }
 
-
-    /* =========================
-       EXTRAS / CARDS
-    ========================= */
+    /* CARDS */
 
     .extras {
-      background: var(--white);
+      background: #f7f1e8;
     }
 
     .cards {
@@ -388,745 +282,195 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 900px;
-      margin: 0 auto;
+      margin: auto;
     }
 
     .card {
-      background: var(--cream);
+      background: #fffaf4;
+      border: 1px solid #dfcbbb;
       padding: 35px 25px;
       text-align: center;
-      border: 1px solid rgba(74,48,37,.08);
-      transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background .3s ease;
-      cursor: default;
-      text-decoration: none;
-      color: inherit;
+      transition: 0.35s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px var(--shadow);
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(84, 54, 38, 0.12);
     }
 
     .card-icon {
-      font-size: 28px;
+      font-size: 30px;
       margin-bottom: 15px;
     }
 
     .card h3 {
       font-size: 28px;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .card p {
-      font-size: 12px;
-      color: var(--brown-light);
-    }
-
-    /* Card NOI */
-
-    .noi-card {
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .noi-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(166,93,67,.07),
-        transparent 55%
-      );
-      opacity: 0;
-      transition: opacity .3s ease;
-    }
-
-    .noi-card:hover::before {
-      opacity: 1;
-    }
-
-    .noi-card .card-icon,
-    .noi-card h3,
-    .noi-card p,
-    .noi-card .card-link {
-      position: relative;
-      z-index: 2;
-    }
-
-    .card-link {
-      display: inline-block;
-      margin-top: 18px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--terracotta);
-      font-weight: 600;
-    }
-
-
-    /* =========================
-       PHOTO GALLERY
-    ========================= */
-
-    .photo-section {
-      background: var(--cream);
-      scroll-margin-top: 20px;
-    }
-
-    .photo-intro {
-      max-width: 600px;
-      margin: 0 auto 60px;
-      text-align: center;
-    }
-
-    .photo-intro p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(25px, 4vw, 34px);
-      line-height: 1.3;
-      font-style: italic;
-      color: var(--brown-light);
-    }
-
-    .photo-gallery {
-      max-width: 950px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: 180px;
-      gap: 14px;
-    }
-
-    .photo-item {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      background: var(--cream-dark);
-      box-shadow: 0 8px 25px rgba(74,48,37,.08);
-    }
-
-    .photo-item:nth-child(1) {
-      grid-column: span 4;
-      grid-row: span 2;
-    }
-
-    .photo-item:nth-child(2) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-
-    .photo-item:nth-child(3) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-
-    .photo-item:nth-child(4) {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-
-    .photo-item:nth-child(5) {
-      grid-column: span 4;
-      grid-row: span 2;
-    }
-
-    .photo-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition:
-        transform .6s ease,
-        filter .4s ease;
-    }
-
-    .photo-item::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(47,29,22,.45),
-        transparent 45%
-      );
-      opacity: 0;
-      transition: opacity .35s ease;
-    }
-
-    .photo-item:hover img {
-      transform: scale(1.06);
-      filter: brightness(.9);
-    }
-
-    .photo-item:hover::after {
-      opacity: 1;
-    }
-
-    .photo-number {
-      position: absolute;
-      left: 18px;
-      bottom: 15px;
-      z-index: 3;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 9px;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: all .35s ease;
-    }
-
-    .photo-item:hover .photo-number {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .photo-closing {
-      text-align: center;
-      margin-top: 55px;
-    }
-
-    .photo-closing p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 27px;
-      font-style: italic;
-      color: var(--brown-light);
-    }
-
-
-    /* =========================
-       LIGHTBOX
-    ========================= */
-
-    .photo-lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(25,17,13,.96);
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 70px 80px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all .3s ease;
-      backdrop-filter: blur(7px);
-    }
-
-    .photo-lightbox.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .lightbox-image {
-      max-width: 90vw;
-      max-height: 82vh;
-      object-fit: contain;
-      display: block;
-      box-shadow: 0 25px 80px rgba(0,0,0,.45);
-      transform: scale(.96);
-      transition: transform .35s ease;
-    }
-
-    .photo-lightbox.active .lightbox-image {
-      transform: scale(1);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-      width: 45px;
-      height: 45px;
-      border: 1px solid rgba(246,239,228,.35);
-      background: transparent;
-      color: var(--cream);
-      font-size: 30px;
-      line-height: 1;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: all .25s ease;
-      z-index: 3;
-    }
-
-    .lightbox-close:hover {
-      background: var(--cream);
-      color: var(--brown);
-    }
-
-    .lightbox-prev,
-    .lightbox-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 55px;
-      height: 55px;
-      border: 1px solid rgba(246,239,228,.3);
-      background: rgba(246,239,228,.06);
-      color: var(--cream);
-      border-radius: 50%;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      line-height: 1;
-      cursor: pointer;
-      transition: all .25s ease;
-      z-index: 3;
-    }
-
-    .lightbox-prev {
-      left: 25px;
-    }
-
-    .lightbox-next {
-      right: 25px;
-    }
-
-    .lightbox-prev:hover,
-    .lightbox-next:hover {
-      background: var(--cream);
-      color: var(--brown);
-    }
-
-    .lightbox-counter {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--cream);
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      opacity: .7;
-    }
-
-
-    /* =========================
-       VOUCHER
-    ========================= */
-
-    .voucher-section {
-      background: var(--cream);
-    }
-
-    .voucher-intro {
-      max-width: 620px;
-      margin: 0 auto 50px;
-      text-align: center;
-      color: var(--brown-light);
-      font-size: 13px;
-    }
-
-    .voucher-button {
-      display: block;
-      margin: 0 auto;
-      border: none;
-      background: var(--brown);
-      color: var(--cream);
-      padding: 16px 32px;
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-      cursor: pointer;
-      transition: all .3s ease;
-    }
-
-    .voucher-button:hover {
-      background: var(--terracotta);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px var(--shadow);
-    }
-
-
-    /* =========================
-       VOUCHER MODAL
-    ========================= */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(47,29,22,.78);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all .35s ease;
-      backdrop-filter: blur(5px);
-    }
-
-    .modal.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-content {
-      width: min(920px,100%);
-      max-height: 92vh;
-      overflow-y: auto;
-      position: relative;
-      transform: translateY(20px) scale(.98);
-      transition: all .35s ease;
-    }
-
-    .modal.active .modal-content {
-      transform: translateY(0) scale(1);
-    }
-
-    .close-modal {
-      position: absolute;
-      right: -5px;
-      top: -45px;
-      border: none;
-      background: transparent;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
-      line-height: 1;
-      z-index: 5;
-    }
-
-    .ticket {
-      display: grid;
-      grid-template-columns: 1fr 225px;
-      background: var(--white);
-      min-height: 390px;
-      box-shadow: 0 25px 70px rgba(0,0,0,.25);
-      position: relative;
-      overflow: hidden;
-      background-image: radial-gradient(
-        rgba(74,48,37,.035) .7px,
-        transparent .7px
-      );
-      background-size: 7px 7px;
-    }
-
-    .ticket-main {
-      padding: 42px 45px 38px;
-      position: relative;
-      min-width: 0;
-    }
-
-    .ticket-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 25px;
-      margin-bottom: 35px;
-    }
-
-    .ticket-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 9px;
-      color: var(--terracotta);
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-
-    .ticket-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      line-height: .95;
-      font-weight: 600;
-    }
-
-    .ticket-stamp {
-      border: 1px solid var(--gold);
-      padding: 9px 13px;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      transform: rotate(-4deg);
-      white-space: nowrap;
-    }
-
-    .ticket-route {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 38px;
-    }
-
-    .station small {
-      display: block;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--brown-light);
-      margin-bottom: 4px;
-    }
-
-    .station strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      line-height: 1;
-      font-weight: 600;
-    }
-
-    .station:last-child {
-      text-align: right;
-    }
-
-    .route-arrow {
-      color: var(--terracotta);
-      font-size: 24px;
-    }
-
-    .ticket-info {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 15px;
-      border-top: 1px solid var(--cream-dark);
-      border-bottom: 1px solid var(--cream-dark);
-      padding: 20px 0;
-    }
-
-    .info-label {
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 8px;
-      color: var(--brown-light);
-      margin-bottom: 5px;
-    }
-
-    .info-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 21px;
-      line-height: 1.1;
-      font-weight: 600;
-    }
-
-    .ticket-message {
-      margin-top: 22px;
-      max-width: 650px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      line-height: 1.35;
-      color: var(--brown-light);
-    }
-
-    .ticket-bottom {
-      margin-top: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .passenger {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--brown-light);
-    }
-
-    .passenger strong {
-      color: var(--brown);
-      font-size: 11px;
-    }
-
-    .ticket-code {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 9px;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-
-    .ticket-main::after {
-      content: "";
-      position: absolute;
-      right: -1px;
-      top: 12px;
-      bottom: 12px;
-      width: 2px;
-      background: repeating-linear-gradient(
-        to bottom,
-        var(--cream-dark) 0,
-        var(--cream-dark) 5px,
-        transparent 5px,
-        transparent 10px
-      );
-    }
-
-    .ticket-stub {
-      position: relative;
-      background: var(--brown);
-      color: var(--cream);
-      padding: 32px 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .ticket-stub::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 15px;
-      bottom: 15px;
-      border-left: 2px dashed rgba(246,239,228,.55);
-    }
-
-    .ticket-stub::after {
-      content: "";
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(47,29,22,.78);
-      left: -14px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .stub-top {
-      position: relative;
-      z-index: 2;
-    }
-
-    .stub-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 8px;
-      opacity: .65;
+      color: #704a36;
       margin-bottom: 10px;
     }
 
-    .stub-city {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 43px;
-      line-height: .9;
-      margin-bottom: 8px;
+    .card p {
+      font-size: 13px;
+      color: #806654;
     }
 
-    .stub-subtitle {
-      font-size: 9px;
-      letter-spacing: 2px;
+    .card-link {
+      display: block;
+      margin-top: 18px;
+      font-size: 11px;
       text-transform: uppercase;
-      opacity: .7;
-    }
-
-    .stub-center {
-      position: relative;
-      z-index: 2;
-    }
-
-    .stub-date {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 27px;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .stub-time {
-      font-size: 10px;
       letter-spacing: 2px;
-      opacity: .7;
-      text-transform: uppercase;
+      color: #a66d4e;
     }
 
-    .stub-code {
-      position: relative;
-      z-index: 2;
-      border-top: 1px solid rgba(246,239,228,.25);
-      padding-top: 15px;
-      font-family: monospace;
-      font-size: 10px;
-      letter-spacing: 1px;
-      opacity: .8;
+    /* VOUCHER */
+
+    .voucher-section {
+      background: #efe5d8;
     }
 
-    .barcode {
-      height: 48px;
-      width: 125px;
-      margin: 15px auto 0;
-      background: repeating-linear-gradient(
-        90deg,
-        var(--cream) 0,
-        var(--cream) 2px,
-        transparent 2px,
-        transparent 5px,
-        var(--cream) 5px,
-        var(--cream) 6px,
-        transparent 6px,
-        transparent 9px
-      );
-      opacity: .9;
-    }
-
-
-    /* =========================
-       FINAL
-    ========================= */
-
-    .final {
-      min-height: 70vh;
+    .voucher {
+      max-width: 850px;
+      margin: auto;
+      background: #fffaf4;
+      border: 1px solid #cdb39f;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: var(--white);
+      min-height: 250px;
+      box-shadow: 0 20px 45px rgba(84, 54, 38, 0.1);
     }
 
-    .final-content {
-      max-width: 700px;
+    .voucher-main {
+      flex: 1;
+      padding: 35px;
+      position: relative;
     }
 
-    .final h2 {
-      font-size: clamp(55px, 9vw, 100px);
-      font-weight: 500;
-      line-height: .9;
+    .voucher-main h3 {
+      font-size: 38px;
+      color: #704a36;
+      margin-bottom: 5px;
+    }
+
+    .voucher-route {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #9b7054;
       margin-bottom: 30px;
     }
 
-    .final p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-style: italic;
-      color: var(--brown-light);
+    .voucher-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
     }
 
-    .final-heart {
+    .voucher-info small {
       display: block;
-      margin-top: 40px;
-      font-size: 32px;
-      color: var(--terracotta);
-      animation: heartbeat 1.7s ease-in-out infinite;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 35px 20px;
-      text-align: center;
-      background: var(--brown);
-      color: var(--cream);
-      font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      opacity: .95;
+      font-size: 9px;
+      color: #a27658;
     }
 
+    .voucher-info strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+    }
 
-    /* =========================
-       ANIMATIONS
-    ========================= */
+    .voucher-message {
+      margin-top: 25px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    .voucher-code {
+      margin-top: 20px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: #a27658;
+    }
+
+    .voucher-stub {
+      width: 220px;
+      border-left: 2px dashed #cdb39f;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .stub-bo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 70px;
+      line-height: 0.8;
+      color: #704a36;
+    }
+
+    .stub-city {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      margin: 12px 0;
+    }
+
+    .barcode {
+      width: 120px;
+      height: 38px;
+      margin: 15px 0;
+      background: repeating-linear-gradient(
+        90deg,
+        #4b3428 0px,
+        #4b3428 2px,
+        transparent 2px,
+        transparent 5px,
+        #4b3428 5px,
+        #4b3428 6px,
+        transparent 6px,
+        transparent 9px
+      );
+    }
+
+    .stub-name {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      background: #4b3428;
+      color: #f7f1e8;
+    }
+
+    footer .footer-heart {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 15px;
+      opacity: 0.6;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ANIMATIONS */
 
     @keyframes fadeUp {
       from {
@@ -1140,18 +484,8 @@
       }
     }
 
-    @keyframes float {
-      0%,100% {
-        transform: translateX(-50%) translateY(0);
-      }
-
-      50% {
-        transform: translateX(-50%) translateY(-8px);
-      }
-    }
-
     @keyframes heartbeat {
-      0%,100% {
+      0%, 100% {
         transform: scale(1);
       }
 
@@ -1160,762 +494,317 @@
       }
     }
 
+    /* MOBILE */
 
-    /* =========================
-       TABLET
-    ========================= */
-
-    @media(max-width:800px) {
+    @media (max-width: 700px) {
 
       section {
-        padding: 80px 18px;
+        padding: 70px 18px;
       }
 
-      .timeline::before {
-        left: 17px;
+      .hero {
+        min-height: 90vh;
       }
 
-      .day-header {
-        text-align: left;
-        padding-left: 0;
+      .hero h1 {
+        font-size: 65px;
       }
 
-      .day-number {
-        width: 52px;
-        height: 52px;
+      .intro-text {
         font-size: 23px;
       }
 
-      .day-name {
-        font-size: 37px;
+      .timeline::before {
+        left: 12px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even),
+      .timeline-item:nth-child(odd) {
+        width: 100%;
+        margin-left: 0;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 5px;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 8px;
+        right: auto;
       }
 
       .event {
-        width: 100%;
-        margin-left: 0 !important;
-        padding: 0 0 35px 50px;
-        text-align: left !important;
-      }
-
-      .event::after {
-        left: 11px !important;
-        right: auto !important;
+        font-size: 23px;
       }
 
       .cards {
         grid-template-columns: 1fr;
-        max-width: 450px;
       }
 
-      /* Gallery mobile/tablet */
-
-      .photo-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 230px;
+      .voucher {
+        display: block;
       }
 
-      .photo-item:nth-child(1),
-      .photo-item:nth-child(2),
-      .photo-item:nth-child(3),
-      .photo-item:nth-child(4),
-      .photo-item:nth-child(5) {
-        grid-column: span 1;
-        grid-row: span 1;
-      }
-
-      .photo-item:nth-child(1) {
-        grid-column: span 2;
-      }
-
-      .photo-item:nth-child(5) {
-        grid-column: span 2;
-      }
-
-      /* Ticket */
-
-      .ticket {
-        grid-template-columns: 1fr;
-      }
-
-      .ticket-main {
-        padding: 32px 25px;
-      }
-
-      .ticket-main::after {
-        display: none;
-      }
-
-      .ticket-stub {
-        min-height: 190px;
-        padding: 25px 30px;
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .ticket-stub::before {
-        left: 15px;
-        right: 15px;
-        top: 0;
-        bottom: auto;
-        height: 2px;
-        border-left: none;
-        border-top: 2px dashed rgba(246,239,228,.55);
-      }
-
-      .ticket-stub::after {
-        left: 50%;
-        top: -14px;
-        transform: translateX(-50%);
-      }
-
-      .stub-top,
-      .stub-center,
-      .stub-code {
-        flex: 1;
-      }
-
-      .stub-code {
-        border-top: none;
-        border-left: 1px solid rgba(246,239,228,.25);
-        padding-top: 0;
-        padding-left: 20px;
-      }
-
-      .barcode {
-        margin-top: 10px;
-      }
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media(max-width:560px) {
-
-      .hero h1 {
-        font-size: 80px;
-      }
-
-      .hero-subtitle {
-        font-size: 31px;
-      }
-
-      .route {
-        gap: 9px;
-        font-size: 10px;
-      }
-
-      .route-line {
-        width: 30px;
-      }
-
-      /* Gallery */
-
-      .photo-gallery {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 260px;
-      }
-
-      .photo-item:nth-child(1),
-      .photo-item:nth-child(2),
-      .photo-item:nth-child(3),
-      .photo-item:nth-child(4),
-      .photo-item:nth-child(5) {
-        grid-column: span 1;
-        grid-row: span 1;
-      }
-
-      .photo-item:nth-child(1) {
-        height: 330px;
-      }
-
-      .photo-item:nth-child(5) {
-        height: 330px;
-      }
-
-      .photo-number {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Lightbox */
-
-      .photo-lightbox {
-        padding: 60px 15px;
-      }
-
-      .lightbox-image {
-        max-width: 96vw;
-        max-height: 78vh;
-      }
-
-      .lightbox-close {
-        top: 15px;
-        right: 15px;
-      }
-
-      .lightbox-prev,
-      .lightbox-next {
-        width: 45px;
-        height: 45px;
-        font-size: 30px;
-      }
-
-      .lightbox-prev {
-        left: 10px;
-      }
-
-      .lightbox-next {
-        right: 10px;
-      }
-
-      /* Ticket */
-
-      .ticket-top {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .ticket-stamp {
-        align-self: flex-start;
-      }
-
-      .ticket-title {
-        font-size: 37px;
-      }
-
-      .ticket-route {
-        gap: 8px;
-      }
-
-      .station strong {
-        font-size: 31px;
-      }
-
-      .route-arrow {
-        font-size: 18px;
-      }
-
-      .ticket-info {
-        grid-template-columns: repeat(2,1fr);
-        row-gap: 22px;
-      }
-
-      .ticket-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .ticket-stub {
-        flex-direction: column;
-        justify-content: center;
-        min-height: 270px;
-        text-align: center;
-      }
-
-      .stub-code {
-        border-left: none;
-        border-top: 1px solid rgba(246,239,228,.25);
-        padding-left: 0;
-        padding-top: 12px;
+      .voucher-stub {
         width: 100%;
+        border-left: none;
+        border-top: 2px dashed #cdb39f;
+        padding: 30px;
       }
 
-      .stub-city {
-        font-size: 39px;
+      .voucher-main {
+        padding: 28px 22px;
       }
 
-      .close-modal {
-        right: 0;
-        top: -38px;
-      }
-
-      .modal {
-        padding: 45px 12px 15px;
+      .voucher-main h3 {
+        font-size: 32px;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
+  <!-- HERO -->
 
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <header class="hero">
-
+  <section class="hero">
     <div class="hero-content">
 
-      <div class="small-label">
-        Un piccolo segreto per te
+      <div class="heart">❤️</div>
+
+      <div class="small-title">
+        Una sorpresa per te
       </div>
 
       <h1>
-        Martina
+        Un weekend
+        <span>tutto per noi</span>
       </h1>
 
-      <div class="hero-subtitle">
-        preparati, si parte.
-      </div>
+      <p class="hero-subtitle">
+        Tre giorni, una città da scoprire e tantissimi momenti
+        da vivere insieme.
+      </p>
 
-      <div class="route">
-        <span>Roma</span>
-        <span class="route-line"></span>
-        <span>Bologna</span>
-      </div>
-
-      <div class="hero-days">
-        Venerdì · Sabato · Domenica
+      <div class="scroll-down">
+        Scopri il nostro viaggio ↓
       </div>
 
     </div>
-
-    <div class="scroll-down">
-      scopri il viaggio ↓
-    </div>
-
-  </header>
+  </section>
 
 
-
-  <!-- =========================
-       INTRO
-  ========================= -->
+  <!-- INTRO -->
 
   <section class="intro">
 
     <div class="container">
 
       <div class="section-label">
-        Il nostro prossimo capitolo
+        La nostra destinazione
       </div>
 
       <h2 class="section-title">
-        Tre giorni a Bologna
+        Bologna
       </h2>
 
-      <div class="intro-text">
-
-        <p>
-          Una valigia leggera, qualche posto nuovo da scoprire
-          e soprattutto una persona con cui condividere tutto.
-        </p>
-
-        <span class="heart">
-          ♥
-        </span>
-
-      </div>
+      <p class="intro-text">
+        Una città di portici, piazze, tramonti e sapori.
+        Ma soprattutto il posto perfetto per regalarci
+        qualche giorno solo per noi.
+      </p>
 
     </div>
 
   </section>
 
 
-
-  <!-- =========================
-       ITINERARIO
-  ========================= -->
+  <!-- ITINERARIO -->
 
   <section>
 
     <div class="container">
 
       <div class="section-label">
-        Il programma
+        Il nostro programma
       </div>
 
       <h2 class="section-title">
-        Il nostro viaggio
+        Tre giorni insieme
       </h2>
-
-      <p class="section-intro">
-        Un itinerario pensato per perderci tra portici,
-        piazze, buon cibo e qualche momento tutto per noi.
-      </p>
 
 
       <div class="timeline">
-
 
         <!-- VENERDÌ -->
 
         <div class="day">
 
-          <div class="day-header">
-
-            <div class="day-number">
-              01
-            </div>
-
-            <div class="day-name">
-              Venerdì
-            </div>
-
-            <div class="day-date">
-              Roma → Bologna
-            </div>
-
+          <div class="day-title">
+            <span>Venerdì · Partenza</span>
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              09:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">09:00</div>
+            <div class="event">
+              Partenza in treno da Roma
             </div>
-
-            <div class="event-title">
-              Si parte
-            </div>
-
-            <div class="event-description">
-              Treno da Roma. Il viaggio comincia.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              11:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">11:00</div>
+            <div class="event">
+              Arrivo a Bologna e prima passeggiata
             </div>
-
-            <div class="event-title">
-              Benvenuti a Bologna
-            </div>
-
-            <div class="event-description">
-              Arrivo e prima passeggiata per iniziare
-              a respirare l'atmosfera della città.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              13:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">13:00</div>
+            <div class="event">
+              Primo pranzo bolognese
             </div>
-
-            <div class="event-title">
-              Primo pranzo
-            </div>
-
-            <div class="event-description">
-              La prima vera missione del viaggio:
-              assaggiare Bologna.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              14:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">14:00</div>
+            <div class="event">
+              Check-in e sistemazione
             </div>
-
-            <div class="event-title">
-              Check-in
-            </div>
-
-            <div class="event-description">
-              Sistemiamo le cose e ci prendiamo
-              un momento per noi.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              15:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">15:00</div>
+            <div class="event">
+              Piazza Maggiore, Nettuno e portici
             </div>
-
-            <div class="event-title">
-              Piazza Maggiore
-            </div>
-
-            <div class="event-description">
-              Fontana del Nettuno, portici e prime
-              passeggiate nel cuore della città.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              20:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">20:00</div>
+            <div class="event">
+              Cena con tortellini ❤️
             </div>
-
-            <div class="event-title">
-              Cena
-            </div>
-
-            <div class="event-description">
-              Tortellini, vino e la prima sera
-              del nostro weekend.
-            </div>
-
           </div>
 
         </div>
-
 
 
         <!-- SABATO -->
 
         <div class="day">
 
-          <div class="day-header">
-
-            <div class="day-number">
-              02
-            </div>
-
-            <div class="day-name">
-              Sabato
-            </div>
-
-            <div class="day-date">
-              Bologna da vivere
-            </div>
-
+          <div class="day-title">
+            <span>Sabato · Bologna</span>
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              09:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">09:00</div>
+            <div class="event">
+              Colazione insieme
             </div>
-
-            <div class="event-title">
-              Buongiorno Bologna
-            </div>
-
-            <div class="event-description">
-              Colazione insieme e via, pronti
-              per una nuova giornata.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              10:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">10:00</div>
+            <div class="event">
+              Centro storico e Torri di Bologna
             </div>
-
-            <div class="event-title">
-              Due torri
-            </div>
-
-            <div class="event-description">
-              Passeggiata nel centro storico tra
-              le strade più belle della città.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              13:00
-            </div>
-
-            <div class="event-title">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">13:00</div>
+            <div class="event">
               Pranzo bolognese
             </div>
-
-            <div class="event-description">
-              Un'altra pausa dedicata a una delle
-              cose che Bologna sa fare meglio.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              15:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">15:00</div>
+            <div class="event">
+              Finestrella di Via Piella
             </div>
-
-            <div class="event-title">
-              Finestrella
-            </div>
-
-            <div class="event-description">
-              Via Piella e il piccolo angolo di Bologna
-              che sembra quasi Venezia.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              16:00
-            </div>
-
-            <div class="event-title">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">16:00</div>
+            <div class="event">
               San Luca
             </div>
-
-            <div class="event-description">
-              Portici, passeggiata e uno dei simboli
-              più belli della città.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              18:30
-            </div>
-
-            <div class="event-title">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">18:30</div>
+            <div class="event">
               Aperitivo
             </div>
-
-            <div class="event-description">
-              Ci fermiamo un po', brindiamo e ci
-              godiamo la serata.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              20:30
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">20:30</div>
+            <div class="event">
+              Cena romantica ❤️
             </div>
-
-            <div class="event-title">
-              Cena romantica
-            </div>
-
-            <div class="event-description">
-              Una serata solo per noi.
-            </div>
-
           </div>
 
         </div>
-
 
 
         <!-- DOMENICA -->
 
         <div class="day">
 
-          <div class="day-header">
-
-            <div class="day-number">
-              03
-            </div>
-
-            <div class="day-name">
-              Domenica
-            </div>
-
-            <div class="day-date">
-              Ultimi momenti
-            </div>
-
+          <div class="day-title">
+            <span>Domenica · Ultime ore</span>
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              09:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">09:00</div>
+            <div class="event">
+              Colazione
             </div>
-
-            <div class="event-title">
-              Ultima colazione
-            </div>
-
-            <div class="event-description">
-              Con calma, prima di salutare Bologna.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              10:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">10:00</div>
+            <div class="event">
+              Ultima passeggiata tra portici,
+              Ghetto Ebraico e Via Zamboni
             </div>
-
-            <div class="event-title">
-              Ancora Bologna
-            </div>
-
-            <div class="event-description">
-              Portici, Ghetto Ebraico, Via Zamboni
-              e altri angoli da scoprire insieme.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              13:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">13:00</div>
+            <div class="event">
+              Ultimo pranzo bolognese
             </div>
-
-            <div class="event-title">
-              Ultimo pranzo
-            </div>
-
-            <div class="event-description">
-              L'ultimo assaggio prima di ripartire.
-            </div>
-
           </div>
 
-
-          <div class="event">
-
-            <div class="event-time">
-              16:00
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="time">16:00</div>
+            <div class="event">
+              Ritorno verso Roma
             </div>
-
-            <div class="event-title">
-              Si torna a casa
-            </div>
-
-            <div class="event-description">
-              Bologna → Roma.
-              Ma il viaggio resta con noi.
-            </div>
-
           </div>
 
         </div>
-
 
       </div>
 
@@ -1924,94 +813,46 @@
   </section>
 
 
-
-  <!-- =========================
-       QUOTE
-  ========================= -->
+  <!-- FRASE -->
 
   <section class="quote-section">
 
-    <div class="quote">
-      “Tre giorni passano in fretta.
-      Ma quello che ci portiamo a casa rimane.”
-    </div>
+    <div class="container">
 
-    <div class="quote-author">
-      Per noi
+      <div class="quote">
+        “Non importa dove andiamo,
+        se ci andiamo insieme.”
+      </div>
+
+      <div class="quote-author">
+        Per noi
+      </div>
+
     </div>
 
   </section>
 
 
-
-  <!-- =========================
-       EXTRAS
-  ========================= -->
+  <!-- EXTRA -->
 
   <section class="extras">
 
     <div class="container">
 
       <div class="section-label">
-        E non è finita qui
+        Alcune cose importanti
       </div>
 
       <h2 class="section-title">
-        Ci sono ancora sorprese
+        Il resto lo scoprirai
       </h2>
-
-      <p class="section-intro">
-        Alcune cose le sappiamo già.
-        Altre le scopriremo strada facendo.
-      </p>
 
 
       <div class="cards">
 
-
-        <!-- HOTEL -->
-
-        <div class="card">
-
-          <div class="card-icon">
-            🏨
-          </div>
-
-          <h3>
-            Hotel
-          </h3>
-
-          <p>
-            Un posto dove tornare dopo una giornata
-            piena di cose belle.
-          </p>
-
-        </div>
-
-
-        <!-- CITTÀ -->
-
-        <div class="card">
-
-          <div class="card-icon">
-            🗺️
-          </div>
-
-          <h3>
-            La città
-          </h3>
-
-          <p>
-            Portici, piazze, vicoli e angoli
-            che scopriremo insieme.
-          </p>
-
-        </div>
-
-
         <!-- NOI -->
 
-        <a href="#noi" class="card noi-card">
+        <a href="foto.html" class="card noi-card">
 
           <div class="card-icon">
             ❤️
@@ -2033,6 +874,53 @@
         </a>
 
 
+        <!-- VOUCHER -->
+
+        <a href="#voucher" class="card">
+
+          <div class="card-icon">
+            🎟️
+          </div>
+
+          <h3>
+            Il nostro voucher
+          </h3>
+
+          <p>
+            Un piccolo biglietto
+            per una grande avventura.
+          </p>
+
+          <span class="card-link">
+            Guarda il voucher →
+          </span>
+
+        </a>
+
+
+        <!-- BOLOGNA -->
+
+        <a href="#itinerario" class="card">
+
+          <div class="card-icon">
+            ✨
+          </div>
+
+          <h3>
+            Bologna
+          </h3>
+
+          <p>
+            Una città che aspetta
+            solo di essere scoperta.
+          </p>
+
+          <span class="card-link">
+            Scopri il programma →
+          </span>
+
+        </a>
+
       </div>
 
     </div>
@@ -2040,735 +928,141 @@
   </section>
 
 
+  <!-- VOUCHER -->
 
-  <!-- =========================
-       NOI / GALLERIA
-  ========================= -->
-
-  <section class="photo-section" id="noi">
+  <section class="voucher-section" id="voucher">
 
     <div class="container">
 
       <div class="section-label">
-        I nostri ricordi
+        Biglietto speciale
       </div>
 
       <h2 class="section-title">
-        Noi
+        Il nostro voucher
       </h2>
 
-      <div class="photo-intro">
 
-        <p>
-          Prima di Bologna, c'è tutto quello
-          che abbiamo già vissuto.
-        </p>
+      <div class="voucher">
 
-      </div>
+        <div class="voucher-main">
 
+          <h3>
+            Un weekend tutto per noi
+          </h3>
 
-      <div class="photo-gallery">
-
-
-        <!-- FOTO 1 -->
-
-        <div class="photo-item" data-index="0">
-
-          <img
-            src="foto/foto1.jpg"
-            alt="Un nostro ricordo"
-            loading="lazy"
-          >
-
-          <span class="photo-number">
-            Ricordo 01
-          </span>
-
-        </div>
-
-
-        <!-- FOTO 2 -->
-
-        <div class="photo-item" data-index="1">
-
-          <img
-            src="foto/foto2.jpg"
-            alt="Un nostro ricordo"
-            loading="lazy"
-          >
-
-          <span class="photo-number">
-            Ricordo 02
-          </span>
-
-        </div>
-
-
-        <!-- FOTO 3 -->
-
-        <div class="photo-item" data-index="2">
-
-          <img
-            src="foto/foto3.jpg"
-            alt="Un nostro ricordo"
-            loading="lazy"
-          >
-
-          <span class="photo-number">
-            Ricordo 03
-          </span>
-
-        </div>
-
-
-        <!-- FOTO 4 -->
-
-        <div class="photo-item" data-index="3">
-
-          <img
-            src="foto/foto4.jpg"
-            alt="Un nostro ricordo"
-            loading="lazy"
-          >
-
-          <span class="photo-number">
-            Ricordo 04
-          </span>
-
-        </div>
-
-
-        <!-- FOTO 5 -->
-
-        <div class="photo-item" data-index="4">
-
-          <img
-            src="foto/foto5.jpg"
-            alt="Un nostro ricordo"
-            loading="lazy"
-          >
-
-          <span class="photo-number">
-            Ricordo 05
-          </span>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="photo-closing">
-
-        <p>
-          E questo è solo l'inizio. ❤️
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       PHOTO LIGHTBOX
-  ========================= -->
-
-  <div
-    class="photo-lightbox"
-    id="photoLightbox"
-    aria-hidden="true"
-  >
-
-    <button
-      class="lightbox-close"
-      id="lightboxClose"
-      aria-label="Chiudi foto"
-    >
-      ×
-    </button>
-
-
-    <button
-      class="lightbox-prev"
-      id="lightboxPrev"
-      aria-label="Foto precedente"
-    >
-      ‹
-    </button>
-
-
-    <img
-      class="lightbox-image"
-      id="lightboxImage"
-      src=""
-      alt="Foto"
-    >
-
-
-    <button
-      class="lightbox-next"
-      id="lightboxNext"
-      aria-label="Foto successiva"
-    >
-      ›
-    </button>
-
-
-    <div
-      class="lightbox-counter"
-      id="lightboxCounter"
-    >
-      1 / 5
-    </div>
-
-  </div>
-
-
-
-  <!-- =========================
-       VOUCHER
-  ========================= -->
-
-  <section class="voucher-section">
-
-    <div class="container">
-
-      <div class="section-label">
-        Il tuo biglietto
-      </div>
-
-      <h2 class="section-title">
-        Un piccolo voucher
-      </h2>
-
-      <p class="voucher-intro">
-        Questo non è ancora il biglietto vero.
-        È molto più importante: è la promessa
-        che presto partiremo.
-      </p>
-
-      <button
-        class="voucher-button"
-        id="openVoucher"
-      >
-        Apri il voucher
-      </button>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       VOUCHER MODAL
-  ========================= -->
-
-  <div
-    class="modal"
-    id="voucherModal"
-  >
-
-    <div class="modal-content">
-
-      <button
-        class="close-modal"
-        id="closeVoucher"
-        aria-label="Chiudi"
-      >
-        ×
-      </button>
-
-
-      <div class="ticket">
-
-
-        <!-- PARTE PRINCIPALE -->
-
-        <div class="ticket-main">
-
-
-          <div class="ticket-top">
-
-            <div>
-
-              <div class="ticket-label">
-                Voucher di viaggio
-              </div>
-
-              <div class="ticket-title">
-                Un weekend<br>
-                tutto per noi
-              </div>
-
-            </div>
-
-
-            <div class="ticket-stamp">
-              Special trip
-            </div>
-
+          <div class="voucher-route">
+            Roma → Bologna
           </div>
 
 
-          <div class="ticket-route">
+          <div class="voucher-info">
 
-            <div class="station">
-
+            <div>
               <small>
-                Partenza
+                Passeggera
               </small>
 
-              <strong>
-                ROMA
-              </strong>
-
-            </div>
-
-
-            <div class="route-arrow">
-              →
-            </div>
-
-
-            <div class="station">
-
-              <small>
-                Destinazione
-              </small>
-
-              <strong>
-                BOLOGNA
-              </strong>
-
-            </div>
-
-          </div>
-
-
-          <div class="ticket-info">
-
-
-            <div>
-
-              <span class="info-label">
-                Partenza
-              </span>
-
-              <span class="info-value">
-                Venerdì
-              </span>
-
-            </div>
-
-
-            <div>
-
-              <span class="info-label">
-                Ora
-              </span>
-
-              <span class="info-value">
-                09:00
-              </span>
-
-            </div>
-
-
-            <div>
-
-              <span class="info-label">
-                Ritorno
-              </span>
-
-              <span class="info-value">
-                Domenica
-              </span>
-
-            </div>
-
-
-            <div>
-
-              <span class="info-label">
-                Durata
-              </span>
-
-              <span class="info-value">
-                3 giorni
-              </span>
-
-            </div>
-
-
-          </div>
-
-
-          <div class="ticket-message">
-            Questo voucher dà diritto a un weekend speciale.
-            Il resto della sorpresa verrà svelato strada facendo. ❤️
-          </div>
-
-
-          <div class="ticket-bottom">
-
-
-            <div class="passenger">
-              Passeggero:
               <strong>
                 Martina
               </strong>
             </div>
 
 
-            <div class="ticket-code">
-              VOUCHER · MARTINA · BOLOGNA
+            <div>
+              <small>
+                Partenza
+              </small>
+
+              <strong>
+                Venerdì · 09:00
+              </strong>
             </div>
 
 
+            <div>
+              <small>
+                Ritorno
+              </small>
+
+              <strong>
+                Domenica · 16:00
+              </strong>
+            </div>
+
+
+            <div>
+              <small>
+                Durata
+              </small>
+
+              <strong>
+                3 giorni · 2 notti
+              </strong>
+            </div>
+
           </div>
 
+
+          <p class="voucher-message">
+            “Questo voucher dà diritto a un weekend speciale.
+            Il resto della sorpresa verrà svelato strada facendo.” ❤️
+          </p>
+
+
+          <div class="voucher-code">
+            VOUCHER · MARTINA · BOLOGNA
+          </div>
 
         </div>
 
 
+        <div class="voucher-stub">
 
-        <!-- PARTE STRAPPABILE -->
-
-        <div class="ticket-stub">
-
-
-          <div class="stub-top">
-
-            <div class="stub-label">
-              Destinazione
-            </div>
-
-            <div class="stub-city">
-              BO
-            </div>
-
-            <div class="stub-subtitle">
-              Bologna
-            </div>
-
+          <div class="stub-bo">
+            BO
           </div>
 
-
-          <div class="stub-center">
-
-            <div class="stub-date">
-              3D · 2N
-            </div>
-
-            <div class="stub-time">
-              Weekend per due
-            </div>
-
+          <div class="stub-city">
+            Bologna
           </div>
 
+          <div>
+            3D · 2N
+          </div>
 
-          <div class="stub-code">
+          <div class="barcode"></div>
 
+          <div class="stub-name">
             MARTINA
-
-            <div class="barcode"></div>
-
           </div>
-
 
         </div>
 
-
       </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- =========================
-       FINAL
-  ========================= -->
-
-  <section class="final">
-
-    <div class="final-content">
-
-      <div class="section-label">
-        E adesso...
-      </div>
-
-      <h2>
-        Pronta<br>
-        a partire?
-      </h2>
-
-      <p>
-        La destinazione è Bologna.
-        La compagnia sei tu.
-      </p>
-
-      <span class="final-heart">
-        ♥
-      </span>
 
     </div>
 
   </section>
 
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- FOOTER -->
 
   <footer>
-    Roma → Bologna · Un viaggio tutto per noi · ❤️
+
+    <div class="footer-heart">
+      ❤️
+    </div>
+
+    <p>
+      Il viaggio più bello è quello che facciamo insieme.
+    </p>
+
+    <small>
+      Roma · Bologna · Noi
+    </small>
+
   </footer>
-
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    /* =========================
-       VOUCHER MODAL
-    ========================= */
-
-    const openVoucher =
-      document.getElementById("openVoucher");
-
-    const closeVoucher =
-      document.getElementById("closeVoucher");
-
-    const voucherModal =
-      document.getElementById("voucherModal");
-
-
-    openVoucher.addEventListener("click", function() {
-
-      voucherModal.classList.add("active");
-
-      document.body.style.overflow = "hidden";
-
-    });
-
-
-    closeVoucher.addEventListener("click", function() {
-
-      voucherModal.classList.remove("active");
-
-      document.body.style.overflow = "";
-
-    });
-
-
-    voucherModal.addEventListener("click", function(event) {
-
-      if (event.target === voucherModal) {
-
-        voucherModal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-      }
-
-    });
-
-
-
-    /* =========================
-       PHOTO GALLERY
-    ========================= */
-
-    const photoItems =
-      document.querySelectorAll(".photo-item");
-
-    const lightbox =
-      document.getElementById("photoLightbox");
-
-    const lightboxImage =
-      document.getElementById("lightboxImage");
-
-    const lightboxClose =
-      document.getElementById("lightboxClose");
-
-    const lightboxPrev =
-      document.getElementById("lightboxPrev");
-
-    const lightboxNext =
-      document.getElementById("lightboxNext");
-
-    const lightboxCounter =
-      document.getElementById("lightboxCounter");
-
-
-    const photos = Array.from(photoItems).map(function(item) {
-
-      return item.querySelector("img").src;
-
-    });
-
-
-    let currentPhoto = 0;
-
-
-    function openPhoto(index) {
-
-      currentPhoto = index;
-
-      lightboxImage.src = photos[currentPhoto];
-
-      lightboxCounter.textContent =
-        (currentPhoto + 1) + " / " + photos.length;
-
-      lightbox.classList.add("active");
-
-      lightbox.setAttribute("aria-hidden", "false");
-
-      document.body.style.overflow = "hidden";
-
-    }
-
-
-    function closePhoto() {
-
-      lightbox.classList.remove("active");
-
-      lightbox.setAttribute("aria-hidden", "true");
-
-      document.body.style.overflow = "";
-
-    }
-
-
-    function showPreviousPhoto() {
-
-      currentPhoto =
-        (currentPhoto - 1 + photos.length) % photos.length;
-
-      lightboxImage.src =
-        photos[currentPhoto];
-
-      lightboxCounter.textContent =
-        (currentPhoto + 1) + " / " + photos.length;
-
-    }
-
-
-    function showNextPhoto() {
-
-      currentPhoto =
-        (currentPhoto + 1) % photos.length;
-
-      lightboxImage.src =
-        photos[currentPhoto];
-
-      lightboxCounter.textContent =
-        (currentPhoto + 1) + " / " + photos.length;
-
-    }
-
-
-    photoItems.forEach(function(item, index) {
-
-      item.addEventListener("click", function() {
-
-        openPhoto(index);
-
-      });
-
-    });
-
-
-    lightboxClose.addEventListener("click", function() {
-
-      closePhoto();
-
-    });
-
-
-    lightboxPrev.addEventListener("click", function() {
-
-      showPreviousPhoto();
-
-    });
-
-
-    lightboxNext.addEventListener("click", function() {
-
-      showNextPhoto();
-
-    });
-
-
-    lightbox.addEventListener("click", function(event) {
-
-      if (event.target === lightbox) {
-
-        closePhoto();
-
-      }
-
-    });
-
-
-
-    /* =========================
-       KEYBOARD CONTROLS
-    ========================= */
-
-    document.addEventListener("keydown", function(event) {
-
-
-      /* ESC */
-
-      if (event.key === "Escape") {
-
-        voucherModal.classList.remove("active");
-
-        lightbox.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-      }
-
-
-      /* FOTO PRECEDENTE */
-
-      if (
-        lightbox.classList.contains("active") &&
-        event.key === "ArrowLeft"
-      ) {
-
-        showPreviousPhoto();
-
-      }
-
-
-      /* FOTO SUCCESSIVA */
-
-      if (
-        lightbox.classList.contains("active") &&
-        event.key === "ArrowRight"
-      ) {
-
-        showNextPhoto();
-
-      }
-
-    });
-
-
-  </script>
 
 </body>
 </html>
