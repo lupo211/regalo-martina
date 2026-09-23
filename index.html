@@ -40,7 +40,7 @@
 
     /* =========================
        HERO
-    ========================= */
+    ========================== */
 
     .hero {
       min-height: 100vh;
@@ -50,9 +50,18 @@
       text-align: center;
       padding: 40px 20px;
       position: relative;
+
       background:
-        radial-gradient(circle at 20% 20%, rgba(185,151,91,.13), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(166,93,72,.10), transparent 35%),
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(185,151,91,.13),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 70%,
+          rgba(166,93,72,.10),
+          transparent 35%
+        ),
         var(--cream);
     }
 
@@ -112,6 +121,8 @@
       text-transform: uppercase;
       transition: .3s ease;
       box-shadow: 0 8px 25px rgba(166,93,72,.22);
+      border: none;
+      cursor: pointer;
     }
 
     .button:hover {
@@ -133,7 +144,7 @@
 
     /* =========================
        INTRO
-    ========================= */
+    ========================== */
 
     .intro {
       padding: 100px 20px;
@@ -157,7 +168,8 @@
 
     .intro h2,
     .day h2,
-    .finale h2 {
+    .finale h2,
+    .voucher-section h2 {
       font-size: clamp(34px, 6vw, 54px);
       font-weight: normal;
       color: var(--brown);
@@ -173,7 +185,7 @@
 
     /* =========================
        ITINERARIO
-    ========================= */
+    ========================== */
 
     .itinerary {
       padding: 90px 20px;
@@ -287,7 +299,7 @@
 
     /* =========================
        QUOTE
-    ========================= */
+    ========================== */
 
     .quote {
       padding: 100px 25px;
@@ -310,17 +322,244 @@
       font-family: Arial, sans-serif;
       font-size: 11px;
       letter-spacing: 3px;
-      text-transform: uppercase;
       opacity: .7;
     }
 
     /* =========================
-       PLACEHOLDER SECTIONS
-    ========================= */
+       VOUCHER
+    ========================== */
+
+    .voucher-section {
+      padding: 100px 20px;
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .voucher-intro {
+      max-width: 620px;
+      margin: 0 auto 45px;
+      color: #756a63;
+      font-size: 17px;
+    }
+
+    .voucher-button {
+      width: min(100%, 650px);
+      margin: auto;
+      background: var(--cream);
+      border: 1px solid var(--soft);
+      border-radius: 22px;
+      padding: 28px 25px;
+      cursor: pointer;
+      transition: .35s ease;
+      box-shadow: 0 10px 35px rgba(70,45,35,.06);
+    }
+
+    .voucher-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(70,45,35,.10);
+    }
+
+    .voucher-button-icon {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .voucher-button-title {
+      font-size: 25px;
+      color: var(--brown);
+      margin-bottom: 5px;
+    }
+
+    .voucher-button-subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #8a7d74;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Modal */
+
+    .voucher-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(35,28,24,.78);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+
+      opacity: 0;
+      visibility: hidden;
+      transition: .35s ease;
+    }
+
+    .voucher-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .voucher {
+      width: min(100%, 720px);
+      background: var(--paper);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0,0,0,.3);
+
+      transform: translateY(35px) scale(.96);
+      transition: .4s ease;
+    }
+
+    .voucher-modal.active .voucher {
+      transform: translateY(0) scale(1);
+    }
+
+    .voucher-top {
+      background: var(--brown);
+      color: white;
+      padding: 35px 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .voucher-top::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background:
+        radial-gradient(
+          circle at 10px -2px,
+          transparent 8px,
+          var(--paper) 9px
+        );
+      background-size: 20px 20px;
+    }
+
+    .voucher-label {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: .75;
+      margin-bottom: 12px;
+    }
+
+    .voucher-destination {
+      font-size: clamp(42px, 9vw, 70px);
+      font-weight: normal;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .voucher-subtitle {
+      font-style: italic;
+      font-size: 18px;
+      opacity: .9;
+    }
+
+    .voucher-body {
+      padding: 38px 35px 30px;
+    }
+
+    .passenger {
+      text-align: center;
+      padding-bottom: 30px;
+      border-bottom: 1px dashed var(--soft);
+      margin-bottom: 28px;
+    }
+
+    .passenger-label {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      color: #95867d;
+      margin-bottom: 5px;
+    }
+
+    .passenger-name {
+      font-size: 32px;
+      color: var(--terracotta);
+      font-style: italic;
+    }
+
+    .voucher-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .detail {
+      padding: 15px;
+      background: var(--cream);
+      border-radius: 12px;
+    }
+
+    .detail-label {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #93847b;
+      margin-bottom: 4px;
+    }
+
+    .detail-value {
+      font-size: 16px;
+      color: var(--brown);
+    }
+
+    .voucher-message {
+      margin-top: 28px;
+      padding: 25px;
+      text-align: center;
+      border-top: 1px dashed var(--soft);
+      border-bottom: 1px dashed var(--soft);
+      font-style: italic;
+      font-size: 17px;
+      color: #675b54;
+    }
+
+    .voucher-code {
+      text-align: center;
+      padding-top: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #9b8d84;
+    }
+
+    .voucher-close {
+      display: block;
+      margin: 25px auto 5px;
+      border: none;
+      background: transparent;
+      color: var(--terracotta);
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 11px;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .voucher-close:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       EXTRA
+    ========================== */
 
     .extra {
       padding: 90px 20px;
-      background: var(--paper);
+      background: var(--cream);
       text-align: center;
     }
 
@@ -336,7 +575,7 @@
       padding: 35px 25px;
       border: 1px solid var(--soft);
       border-radius: 18px;
-      background: var(--cream);
+      background: var(--paper);
     }
 
     .extra-card .icon {
@@ -359,13 +598,17 @@
 
     /* =========================
        FINALE
-    ========================= */
+    ========================== */
 
     .finale {
       padding: 130px 25px;
       text-align: center;
       background:
-        radial-gradient(circle at center, rgba(185,151,91,.13), transparent 50%),
+        radial-gradient(
+          circle at center,
+          rgba(185,151,91,.13),
+          transparent 50%
+        ),
         var(--cream);
     }
 
@@ -390,7 +633,7 @@
 
     /* =========================
        FOOTER
-    ========================= */
+    ========================== */
 
     footer {
       padding: 30px 20px;
@@ -404,9 +647,10 @@
 
     /* =========================
        ANIMATIONS
-    ========================= */
+    ========================== */
 
     @keyframes fadeUp {
+
       from {
         opacity: 0;
         transform: translateY(25px);
@@ -416,9 +660,11 @@
         opacity: 1;
         transform: translateY(0);
       }
+
     }
 
     @keyframes heartbeat {
+
       0%, 100% {
         transform: scale(1);
       }
@@ -438,11 +684,12 @@
       40% {
         transform: scale(1);
       }
+
     }
 
     /* =========================
        MOBILE
-    ========================= */
+    ========================== */
 
     @media (max-width: 650px) {
 
@@ -452,6 +699,7 @@
 
       .intro,
       .itinerary,
+      .voucher-section,
       .extra,
       .finale {
         padding-top: 75px;
@@ -494,11 +742,31 @@
       .quote {
         padding: 80px 25px;
       }
+
+      .voucher-body {
+        padding: 30px 20px 25px;
+      }
+
+      .voucher-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .voucher-top {
+        padding: 30px 20px;
+      }
+
+      .voucher-destination {
+        font-size: 48px;
+      }
+
     }
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HERO
@@ -593,6 +861,7 @@
 
 
       <div class="timeline">
+
 
         <div class="event">
 
@@ -719,6 +988,7 @@
 
         </div>
 
+
       </div>
 
     </section>
@@ -824,7 +1094,7 @@
             </div>
 
             <div class="event-description">
-              Uno degli angoli più particolari e romantici della città.
+              Uno degli angoli più particolari della città.
             </div>
 
           </div>
@@ -1028,10 +1298,221 @@
     </p>
 
     <span>
-      ❤️
+      ♥
     </span>
 
   </section>
+
+
+  <!-- =========================
+       VOUCHER
+  ========================== -->
+
+  <section class="voucher-section" id="voucher">
+
+    <div class="section-inner">
+
+      <div class="eyebrow">
+        Un regalo speciale
+      </div>
+
+      <h2>
+        Il tuo voucher
+      </h2>
+
+      <p class="voucher-intro">
+        C'è un piccolo biglietto che ti aspetta.
+        Clicca qui sotto per aprirlo.
+      </p>
+
+
+      <button
+        class="voucher-button"
+        onclick="openVoucher()"
+        aria-label="Apri il voucher di viaggio"
+      >
+
+        <div class="voucher-button-icon">
+          🎫
+        </div>
+
+        <div class="voucher-button-title">
+          Apri il tuo voucher
+        </div>
+
+        <div class="voucher-button-subtitle">
+          Clicca per scoprire il biglietto
+        </div>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       VOUCHER MODAL
+  ========================== -->
+
+  <div
+    class="voucher-modal"
+    id="voucherModal"
+    onclick="closeVoucherOutside(event)"
+  >
+
+    <div
+      class="voucher"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Voucher di viaggio"
+    >
+
+
+      <div class="voucher-top">
+
+        <div class="voucher-label">
+          Voucher di viaggio
+        </div>
+
+        <div class="voucher-destination">
+          BOLOGNA
+        </div>
+
+        <div class="voucher-subtitle">
+          Un weekend tutto per noi
+        </div>
+
+      </div>
+
+
+      <div class="voucher-body">
+
+
+        <div class="passenger">
+
+          <div class="passenger-label">
+            Passeggera
+          </div>
+
+          <div class="passenger-name">
+            Martina
+          </div>
+
+        </div>
+
+
+        <div class="voucher-details">
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Partenza
+            </span>
+
+            <span class="detail-value">
+              Roma
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Destinazione
+            </span>
+
+            <span class="detail-value">
+              Bologna
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Durata
+            </span>
+
+            <span class="detail-value">
+              3 giorni · 2 notti
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Partenza
+            </span>
+
+            <span class="detail-value">
+              Venerdì · ore 09:00
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Rientro
+            </span>
+
+            <span class="detail-value">
+              Domenica · ore 16:00
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              Compagnia
+            </span>
+
+            <span class="detail-value">
+              Da scoprire
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="voucher-message">
+
+          Questo voucher dà diritto a un weekend speciale.
+          <br>
+          Il resto della sorpresa verrà svelato strada facendo. ❤️
+
+        </div>
+
+
+        <div class="voucher-code">
+          VOUCHER · MARTINA · BOLOGNA
+        </div>
+
+
+        <button
+          class="voucher-close"
+          onclick="closeVoucher()"
+        >
+          Chiudi voucher
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </div>
 
 
   <!-- =========================
@@ -1050,12 +1531,15 @@
         Ancora qualche dettaglio...
       </h2>
 
+
       <div class="extra-grid">
 
 
         <div class="extra-card">
 
-          <div class="icon">🏨</div>
+          <div class="icon">
+            🏨
+          </div>
 
           <h3>
             Dove dormiamo
@@ -1071,7 +1555,9 @@
 
         <div class="extra-card">
 
-          <div class="icon">🗺️</div>
+          <div class="icon">
+            🗺️
+          </div>
 
           <h3>
             La nostra Bologna
@@ -1087,15 +1573,17 @@
 
         <div class="extra-card">
 
-          <div class="icon">🎫</div>
+          <div class="icon">
+            🎫
+          </div>
 
           <h3>
             Il tuo voucher
           </h3>
 
           <p>
-            Qui potremo inserire il voucher
-            digitale del viaggio.
+            Un piccolo biglietto per
+            un weekend tutto per noi.
           </p>
 
         </div>
@@ -1103,7 +1591,9 @@
 
         <div class="extra-card">
 
-          <div class="icon">📸</div>
+          <div class="icon">
+            📸
+          </div>
 
           <h3>
             I nostri ricordi
@@ -1160,6 +1650,58 @@
     Un piccolo viaggio per una persona speciale · 2026
 
   </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    function openVoucher() {
+
+      const modal = document.getElementById("voucherModal");
+
+      modal.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeVoucher() {
+
+      const modal = document.getElementById("voucherModal");
+
+      modal.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    function closeVoucherOutside(event) {
+
+      if (event.target.id === "voucherModal") {
+
+        closeVoucher();
+
+      }
+
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+
+        closeVoucher();
+
+      }
+
+    });
+
+  </script>
 
 
 </body>
