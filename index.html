@@ -4,20 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Il viaggio di Martina ❤️</title>
+  <title>Martina — Preparati, si parte ❤️</title>
 
-  <meta name="description" content="Un piccolo viaggio, una grande sorpresa. Bologna, 3 giorni insieme.">
+  <meta name="description" content="Tre giorni a Bologna. Un viaggio tutto per noi.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f8f3ec;
-      --paper: #fffdf9;
-      --dark: #292521;
-      --brown: #765548;
-      --terracotta: #a65d48;
-      --gold: #b9975b;
-      --soft: #e9ddd2;
-      --white: #ffffff;
+      --cream: #f6efe4;
+      --cream-dark: #eadbc7;
+      --brown: #4a3025;
+      --brown-light: #725242;
+      --terracotta: #a65d43;
+      --gold: #b28a54;
+      --white: #fffaf3;
+      --shadow: rgba(74, 48, 37, 0.14);
     }
 
     * {
@@ -31,16 +36,24 @@
     }
 
     body {
-      font-family: Georgia, "Times New Roman", serif;
       background: var(--cream);
-      color: var(--dark);
-      line-height: 1.6;
+      color: var(--brown);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif {
+      font-family: 'Cormorant Garamond', serif;
     }
 
     /* =========================
        HERO
-    ========================== */
+    ========================= */
 
     .hero {
       min-height: 100vh;
@@ -48,609 +61,805 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
       position: relative;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
 
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(185,151,91,.13),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 80% 70%,
-          rgba(166,93,72,.10),
-          transparent 35%
-        ),
-        var(--cream);
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(178, 138, 84, 0.08);
+      top: -180px;
+      left: -180px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(166, 93, 67, 0.06);
+      bottom: -180px;
+      right: -150px;
     }
 
     .hero-content {
-      max-width: 700px;
-      animation: fadeUp 1.4s ease forwards;
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      animation: fadeUp 1.3s ease forwards;
     }
 
-    .small-title {
+    .small-label {
       text-transform: uppercase;
       letter-spacing: 4px;
-      font-size: 12px;
-      color: var(--brown);
-      margin-bottom: 25px;
+      font-size: 11px;
+      color: var(--terracotta);
+      margin-bottom: 18px;
+      font-weight: 500;
     }
 
     .hero h1 {
-      font-size: clamp(55px, 12vw, 110px);
-      font-weight: normal;
-      line-height: .95;
-      color: var(--terracotta);
-      margin-bottom: 20px;
+      font-size: clamp(72px, 13vw, 150px);
+      line-height: 0.8;
+      font-weight: 500;
+      margin-bottom: 30px;
     }
 
     .hero-subtitle {
-      font-size: clamp(20px, 4vw, 28px);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 5vw, 48px);
       font-style: italic;
-      color: var(--brown);
-      margin-bottom: 35px;
-    }
-
-    .hero-date {
-      font-size: 15px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 45px;
-      color: #6e625b;
-    }
-
-    .heart {
-      font-size: 38px;
-      display: block;
       margin-bottom: 30px;
-      animation: heartbeat 2s infinite;
     }
 
-    .button {
-      display: inline-block;
-      text-decoration: none;
-      color: var(--white);
-      background: var(--terracotta);
-      padding: 14px 30px;
-      border-radius: 40px;
-      font-family: Arial, sans-serif;
+    .route {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
       font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: .3s ease;
-      box-shadow: 0 8px 25px rgba(166,93,72,.22);
-      border: none;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(166,93,72,.30);
-    }
-
-    .scroll-hint {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: Arial, sans-serif;
-      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #8b7c73;
+      color: var(--brown-light);
+    }
+
+    .route-line {
+      width: 55px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-days {
+      margin-top: 35px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--brown-light);
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 100px 20px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(42px, 7vw, 70px);
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 0 auto 70px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--brown-light);
     }
 
     /* =========================
        INTRO
-    ========================== */
+    ========================= */
 
     .intro {
-      padding: 100px 20px;
+      background: var(--white);
+    }
+
+    .intro-text {
       text-align: center;
-      background: var(--paper);
-    }
-
-    .section-inner {
-      max-width: 850px;
+      max-width: 700px;
       margin: auto;
     }
 
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      margin-bottom: 15px;
+    .intro-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.35;
     }
 
-    .intro h2,
-    .day h2,
-    .finale h2,
-    .voucher-section h2 {
-      font-size: clamp(34px, 6vw, 54px);
-      font-weight: normal;
-      color: var(--brown);
-      margin-bottom: 25px;
-    }
-
-    .intro p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 19px;
-      color: #625850;
+    .heart {
+      display: block;
+      margin-top: 35px;
+      color: var(--terracotta);
+      font-size: 24px;
     }
 
     /* =========================
-       ITINERARIO
-    ========================== */
-
-    .itinerary {
-      padding: 90px 20px;
-    }
-
-    .day {
-      max-width: 900px;
-      margin: 0 auto 100px;
-    }
-
-    .day-header {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .day-number {
-      display: inline-block;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    .day-description {
-      font-style: italic;
-      color: #776b64;
-      font-size: 17px;
-    }
+       TIMELINE
+    ========================= */
 
     .timeline {
       position: relative;
-      margin: auto;
-      max-width: 720px;
+      max-width: 850px;
+      margin: 0 auto;
     }
 
     .timeline::before {
       content: "";
       position: absolute;
-      left: 91px;
+      left: 50%;
       top: 0;
       bottom: 0;
       width: 1px;
-      background: var(--soft);
+      background: var(--cream-dark);
+      transform: translateX(-50%);
     }
 
-    .event {
-      display: grid;
-      grid-template-columns: 75px 32px 1fr;
-      gap: 16px;
-      margin-bottom: 32px;
+    .day {
+      margin-bottom: 100px;
       position: relative;
     }
 
-    .time {
-      text-align: right;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      font-weight: bold;
-      color: var(--terracotta);
-      padding-top: 2px;
+    .day:last-child {
+      margin-bottom: 0;
     }
 
-    .dot {
-      width: 11px;
-      height: 11px;
-      background: var(--terracotta);
-      border-radius: 50%;
-      margin-top: 5px;
-      margin-left: 10px;
+    .day-header {
+      text-align: center;
+      margin-bottom: 45px;
+      position: relative;
       z-index: 2;
-      box-shadow: 0 0 0 5px var(--cream);
     }
 
-    .event-card {
-      background: rgba(255,255,255,.55);
-      border: 1px solid rgba(118,85,72,.10);
-      border-radius: 14px;
-      padding: 16px 20px;
-      transition: .25s ease;
+    .day-number {
+      display: inline-flex;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: var(--brown);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      margin-bottom: 15px;
+      box-shadow: 0 8px 25px var(--shadow);
     }
 
-    .event-card:hover {
-      transform: translateX(4px);
-      background: var(--paper);
-      box-shadow: 0 10px 30px rgba(80,50,40,.07);
+    .day-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 500;
+    }
+
+    .day-date {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      margin-top: 3px;
+    }
+
+    .event {
+      width: 50%;
+      padding: 0 45px 40px;
+      position: relative;
+    }
+
+    .event:nth-child(odd) {
+      margin-left: 50%;
+    }
+
+    .event:nth-child(even) {
+      text-align: right;
+    }
+
+    .event::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      border: 3px solid var(--cream);
+      box-sizing: content-box;
+    }
+
+    .event:nth-child(odd)::after {
+      left: -6px;
+    }
+
+    .event:nth-child(even)::after {
+      right: -6px;
+    }
+
+    .event-time {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+      font-weight: 600;
     }
 
     .event-title {
-      font-size: 19px;
-      color: var(--brown);
-      margin-bottom: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 29px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 5px;
     }
 
     .event-description {
-      font-size: 14px;
-      color: #776b64;
-      font-family: Arial, sans-serif;
-    }
-
-    .special .event-card {
-      border-color: rgba(185,151,91,.35);
-      background: rgba(185,151,91,.08);
-    }
-
-    .special .event-title::after {
-      content: " ♥";
-      color: var(--terracotta);
+      font-size: 12px;
+      color: var(--brown-light);
+      line-height: 1.6;
     }
 
     /* =========================
        QUOTE
-    ========================== */
+    ========================= */
+
+    .quote-section {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 120px 20px;
+    }
 
     .quote {
-      padding: 100px 25px;
-      text-align: center;
-      background: var(--brown);
-      color: white;
-    }
-
-    .quote p {
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
-      font-size: clamp(24px, 5vw, 38px);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.15;
       font-style: italic;
-      line-height: 1.35;
     }
 
-    .quote span {
-      display: block;
-      margin-top: 25px;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
+    .quote-author {
+      margin-top: 30px;
+      font-size: 10px;
       letter-spacing: 3px;
-      opacity: .7;
+      text-transform: uppercase;
+      opacity: 0.7;
     }
 
     /* =========================
-       VOUCHER
-    ========================== */
+       EXTRA CARDS
+    ========================= */
+
+    .extras {
+      background: var(--white);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--cream);
+      padding: 35px 25px;
+      text-align: center;
+      border: 1px solid rgba(74, 48, 37, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px var(--shadow);
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: var(--brown-light);
+    }
+
+    /* =========================
+       VOUCHER SECTION
+    ========================= */
 
     .voucher-section {
-      padding: 100px 20px;
-      background: var(--paper);
-      text-align: center;
+      background: var(--cream);
     }
 
     .voucher-intro {
       max-width: 620px;
-      margin: 0 auto 45px;
-      color: #756a63;
-      font-size: 17px;
+      margin: 0 auto 50px;
+      text-align: center;
+      color: var(--brown-light);
+      font-size: 13px;
     }
 
     .voucher-button {
-      width: min(100%, 650px);
-      margin: auto;
-      background: var(--cream);
-      border: 1px solid var(--soft);
-      border-radius: 22px;
-      padding: 28px 25px;
+      display: block;
+      margin: 0 auto;
+      border: none;
+      background: var(--brown);
+      color: var(--cream);
+      padding: 16px 32px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
       cursor: pointer;
-      transition: .35s ease;
-      box-shadow: 0 10px 35px rgba(70,45,35,.06);
+      transition: all 0.3s ease;
     }
 
     .voucher-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(70,45,35,.10);
+      background: var(--terracotta);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px var(--shadow);
     }
 
-    .voucher-button-icon {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
+    /* =========================
+       MODAL
+    ========================= */
 
-    .voucher-button-title {
-      font-size: 25px;
-      color: var(--brown);
-      margin-bottom: 5px;
-    }
-
-    .voucher-button-subtitle {
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      color: #8a7d74;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* Modal */
-
-    .voucher-modal {
+    .modal {
       position: fixed;
       inset: 0;
-      background: rgba(35,28,24,.78);
-      backdrop-filter: blur(5px);
+      background: rgba(47, 29, 22, 0.78);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 25px;
       z-index: 1000;
-
       opacity: 0;
       visibility: hidden;
-      transition: .35s ease;
+      transition: all 0.35s ease;
+      backdrop-filter: blur(5px);
     }
 
-    .voucher-modal.active {
+    .modal.active {
       opacity: 1;
       visibility: visible;
     }
 
-    .voucher {
-      width: min(100%, 720px);
-      background: var(--paper);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 30px 90px rgba(0,0,0,.3);
-
-      transform: translateY(35px) scale(.96);
-      transition: .4s ease;
+    .modal-content {
+      width: min(920px, 100%);
+      max-height: 92vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(20px) scale(0.98);
+      transition: all 0.35s ease;
     }
 
-    .voucher-modal.active .voucher {
+    .modal.active .modal-content {
       transform: translateY(0) scale(1);
     }
 
-    .voucher-top {
-      background: var(--brown);
-      color: white;
-      padding: 35px 30px;
-      text-align: center;
-      position: relative;
-    }
-
-    .voucher-top::after {
-      content: "";
+    .close-modal {
       position: absolute;
-      bottom: -1px;
-      left: 0;
-      right: 0;
-      height: 12px;
-      background:
-        radial-gradient(
-          circle at 10px -2px,
-          transparent 8px,
-          var(--paper) 9px
-        );
-      background-size: 20px 20px;
-    }
-
-    .voucher-label {
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      opacity: .75;
-      margin-bottom: 12px;
-    }
-
-    .voucher-destination {
-      font-size: clamp(42px, 9vw, 70px);
-      font-weight: normal;
+      right: -5px;
+      top: -45px;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
       line-height: 1;
-      margin-bottom: 10px;
+      z-index: 5;
     }
 
-    .voucher-subtitle {
-      font-style: italic;
-      font-size: 18px;
-      opacity: .9;
+    /* =========================
+       REALISTIC TEAR-OFF TICKET
+    ========================= */
+
+    .ticket {
+      display: grid;
+      grid-template-columns: 1fr 225px;
+      background: var(--white);
+      min-height: 390px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+
+      /*
+        Leggera texture visiva per dare l'effetto carta
+      */
+      background-image:
+        radial-gradient(rgba(74, 48, 37, 0.035) 0.7px, transparent 0.7px);
+      background-size: 7px 7px;
     }
 
-    .voucher-body {
-      padding: 38px 35px 30px;
+    /* MAIN TICKET */
+
+    .ticket-main {
+      padding: 42px 45px 38px;
+      position: relative;
+      min-width: 0;
     }
 
-    .passenger {
-      text-align: center;
-      padding-bottom: 30px;
-      border-bottom: 1px dashed var(--soft);
-      margin-bottom: 28px;
+    .ticket-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 25px;
+      margin-bottom: 35px;
     }
 
-    .passenger-label {
-      font-family: Arial, sans-serif;
+    .ticket-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 9px;
+      color: var(--terracotta);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .ticket-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      line-height: 0.95;
+      font-weight: 600;
+    }
+
+    .ticket-stamp {
+      border: 1px solid var(--gold);
+      padding: 9px 13px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      transform: rotate(-4deg);
+      white-space: nowrap;
+    }
+
+    .ticket-route {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 38px;
+    }
+
+    .station small {
+      display: block;
+      font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 10px;
-      color: #95867d;
-      margin-bottom: 5px;
-    }
-
-    .passenger-name {
-      font-size: 32px;
-      color: var(--terracotta);
-      font-style: italic;
-    }
-
-    .voucher-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .detail {
-      padding: 15px;
-      background: var(--cream);
-      border-radius: 12px;
-    }
-
-    .detail-label {
-      display: block;
-      font-family: Arial, sans-serif;
-      font-size: 9px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #93847b;
+      color: var(--brown-light);
       margin-bottom: 4px;
     }
 
-    .detail-value {
-      font-size: 16px;
-      color: var(--brown);
+    .station strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 600;
     }
 
-    .voucher-message {
-      margin-top: 28px;
-      padding: 25px;
-      text-align: center;
-      border-top: 1px dashed var(--soft);
-      border-bottom: 1px dashed var(--soft);
-      font-style: italic;
-      font-size: 17px;
-      color: #675b54;
+    .station:last-child {
+      text-align: right;
     }
 
-    .voucher-code {
-      text-align: center;
-      padding-top: 25px;
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: #9b8d84;
-    }
-
-    .voucher-close {
-      display: block;
-      margin: 25px auto 5px;
-      border: none;
-      background: transparent;
+    .route-arrow {
       color: var(--terracotta);
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 11px;
-      cursor: pointer;
-      padding: 10px 20px;
+      font-size: 24px;
     }
 
-    .voucher-close:hover {
-      text-decoration: underline;
-    }
-
-    /* =========================
-       EXTRA
-    ========================== */
-
-    .extra {
-      padding: 90px 20px;
-      background: var(--cream);
-      text-align: center;
-    }
-
-    .extra-grid {
+    .ticket-info {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 20px 0;
+    }
+
+    .info-label {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 8px;
+      color: var(--brown-light);
+      margin-bottom: 5px;
+    }
+
+    .info-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.1;
+      font-weight: 600;
+    }
+
+    .ticket-message {
+      margin-top: 22px;
+      max-width: 650px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      line-height: 1.35;
+      color: var(--brown-light);
+    }
+
+    .ticket-bottom {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 20px;
-      max-width: 850px;
-      margin: 45px auto 0;
     }
 
-    .extra-card {
-      padding: 35px 25px;
-      border: 1px solid var(--soft);
-      border-radius: 18px;
-      background: var(--paper);
+    .passenger {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--brown-light);
     }
 
-    .extra-card .icon {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .extra-card h3 {
+    .passenger strong {
       color: var(--brown);
-      font-weight: normal;
-      font-size: 22px;
+      font-size: 11px;
+    }
+
+    .ticket-code {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    /* Decorative tiny perforation dots */
+
+    .ticket-main::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          var(--cream-dark) 0,
+          var(--cream-dark) 5px,
+          transparent 5px,
+          transparent 10px
+        );
+    }
+
+    /* TEAR OFF */
+
+    .ticket-stub {
+      position: relative;
+      background: var(--brown);
+      color: var(--cream);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /*
+      Linea di strappo verticale
+    */
+
+    .ticket-stub::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 15px;
+      bottom: 15px;
+      border-left: 2px dashed rgba(246, 239, 228, 0.55);
+    }
+
+    /*
+      Buchi semicircolari del biglietto
+    */
+
+    .ticket-stub::after {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(47, 29, 22, 0.78);
+      left: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+
+    .stub-top {
+      position: relative;
+      z-index: 2;
+    }
+
+    .stub-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 8px;
+      opacity: 0.65;
       margin-bottom: 10px;
     }
 
-    .extra-card p {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #756a63;
+    .stub-city {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 43px;
+      line-height: 0.9;
+      margin-bottom: 8px;
+    }
+
+    .stub-subtitle {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .stub-center {
+      position: relative;
+      z-index: 2;
+    }
+
+    .stub-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 27px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stub-time {
+      font-size: 10px;
+      letter-spacing: 2px;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+
+    .stub-code {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(246, 239, 228, 0.25);
+      padding-top: 15px;
+      font-family: monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+
+    /* Fake barcode — decorative only */
+
+    .barcode {
+      height: 48px;
+      width: 125px;
+      margin: 15px auto 0;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          var(--cream) 0px,
+          var(--cream) 2px,
+          transparent 2px,
+          transparent 5px,
+          var(--cream) 5px,
+          var(--cream) 6px,
+          transparent 6px,
+          transparent 9px
+        );
+      opacity: 0.9;
     }
 
     /* =========================
-       FINALE
-    ========================== */
+       FINAL
+    ========================= */
 
-    .finale {
-      padding: 130px 25px;
+    .final {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(185,151,91,.13),
-          transparent 50%
-        ),
-        var(--cream);
+      background: var(--white);
     }
 
-    .finale p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      font-size: 19px;
-      color: #655a53;
+    .final-content {
+      max-width: 700px;
     }
 
-    .big-heart {
-      font-size: 55px;
-      margin-bottom: 25px;
-      animation: heartbeat 2.2s infinite;
+    .final h2 {
+      font-size: clamp(55px, 9vw, 100px);
+      font-weight: 500;
+      line-height: 0.9;
+      margin-bottom: 30px;
     }
 
-    .signature {
-      font-size: 23px;
+    .final p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
       font-style: italic;
+      color: var(--brown-light);
+    }
+
+    .final-heart {
+      display: block;
+      margin-top: 40px;
+      font-size: 32px;
       color: var(--terracotta);
+      animation: heartbeat 1.7s ease-in-out infinite;
     }
 
     /* =========================
        FOOTER
-    ========================== */
+    ========================= */
 
     footer {
-      padding: 30px 20px;
+      padding: 35px 20px;
       text-align: center;
-      background: #241f1c;
-      color: rgba(255,255,255,.55);
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 1px;
+      background: var(--brown);
+      color: var(--cream);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.95;
     }
 
     /* =========================
        ANIMATIONS
-    ========================== */
+    ========================= */
 
     @keyframes fadeUp {
-
       from {
         opacity: 0;
         transform: translateY(25px);
@@ -660,147 +869,252 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
 
+    @keyframes float {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(-8px);
+      }
     }
 
     @keyframes heartbeat {
-
       0%, 100% {
         transform: scale(1);
       }
 
-      10% {
+      50% {
         transform: scale(1.15);
       }
-
-      20% {
-        transform: scale(1);
-      }
-
-      30% {
-        transform: scale(1.10);
-      }
-
-      40% {
-        transform: scale(1);
-      }
-
     }
 
     /* =========================
-       MOBILE
-    ========================== */
+       RESPONSIVE
+    ========================= */
 
-    @media (max-width: 650px) {
+    @media (max-width: 800px) {
 
-      .hero {
-        min-height: 100svh;
-      }
-
-      .intro,
-      .itinerary,
-      .voucher-section,
-      .extra,
-      .finale {
-        padding-top: 75px;
-        padding-bottom: 75px;
+      section {
+        padding: 80px 18px;
       }
 
       .timeline::before {
-        left: 67px;
+        left: 17px;
+      }
+
+      .day-header {
+        text-align: left;
+        padding-left: 0;
+      }
+
+      .day-number {
+        width: 52px;
+        height: 52px;
+        font-size: 23px;
+      }
+
+      .day-name {
+        font-size: 37px;
       }
 
       .event {
-        grid-template-columns: 52px 30px 1fr;
-        gap: 10px;
+        width: 100%;
+        margin-left: 0 !important;
+        padding: 0 0 35px 50px;
+        text-align: left !important;
       }
 
-      .time {
-        font-size: 11px;
+      .event::after {
+        left: 11px !important;
+        right: auto !important;
       }
 
-      .dot {
-        margin-left: 9px;
+      .cards {
+        grid-template-columns: 1fr;
+        max-width: 450px;
       }
 
-      .event-card {
-        padding: 14px 15px;
-      }
-
-      .event-title {
-        font-size: 17px;
-      }
-
-      .event-description {
-        font-size: 12px;
-      }
-
-      .extra-grid {
+      .ticket {
         grid-template-columns: 1fr;
       }
 
-      .quote {
-        padding: 80px 25px;
+      .ticket-main {
+        padding: 32px 25px;
       }
 
-      .voucher-body {
-        padding: 30px 20px 25px;
+      /*
+        Su mobile il tagliando diventa orizzontale
+        sotto il biglietto principale.
+      */
+
+      .ticket-main::after {
+        display: none;
       }
 
-      .voucher-details {
-        grid-template-columns: 1fr;
-        gap: 10px;
+      .ticket-stub {
+        min-height: 190px;
+        padding: 25px 30px;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
       }
 
-      .voucher-top {
-        padding: 30px 20px;
+      .ticket-stub::before {
+        left: 15px;
+        right: 15px;
+        top: 0;
+        bottom: auto;
+        height: 2px;
+        border-left: none;
+        border-top: 2px dashed rgba(246, 239, 228, 0.55);
       }
 
-      .voucher-destination {
-        font-size: 48px;
+      .ticket-stub::after {
+        left: 50%;
+        top: -14px;
+        transform: translateX(-50%);
       }
 
+      .stub-top,
+      .stub-center,
+      .stub-code {
+        flex: 1;
+      }
+
+      .stub-code {
+        border-top: none;
+        border-left: 1px solid rgba(246, 239, 228, 0.25);
+        padding-top: 0;
+        padding-left: 20px;
+      }
+
+      .barcode {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .hero h1 {
+        font-size: 80px;
+      }
+
+      .hero-subtitle {
+        font-size: 31px;
+      }
+
+      .route {
+        gap: 9px;
+        font-size: 10px;
+      }
+
+      .route-line {
+        width: 30px;
+      }
+
+      .ticket-top {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .ticket-stamp {
+        align-self: flex-start;
+      }
+
+      .ticket-title {
+        font-size: 37px;
+      }
+
+      .ticket-route {
+        gap: 8px;
+      }
+
+      .station strong {
+        font-size: 31px;
+      }
+
+      .route-arrow {
+        font-size: 18px;
+      }
+
+      .ticket-info {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 22px;
+      }
+
+      .ticket-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .ticket-stub {
+        flex-direction: column;
+        justify-content: center;
+        min-height: 270px;
+        text-align: center;
+      }
+
+      .stub-code {
+        border-left: none;
+        border-top: 1px solid rgba(246, 239, 228, 0.25);
+        padding-left: 0;
+        padding-top: 12px;
+        width: 100%;
+      }
+
+      .stub-city {
+        font-size: 39px;
+      }
+
+      .close-modal {
+        right: 0;
+        top: -38px;
+      }
+
+      .modal {
+        padding: 45px 12px 15px;
+      }
     }
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =========================
        HERO
-  ========================== -->
+  ========================= -->
 
   <header class="hero">
 
     <div class="hero-content">
 
-      <span class="small-title">
-        Un piccolo viaggio
-      </span>
-
-      <span class="heart">♥</span>
+      <div class="small-label">
+        Un piccolo segreto per te
+      </div>
 
       <h1>Martina</h1>
 
-      <p class="hero-subtitle">
+      <div class="hero-subtitle">
         preparati, si parte.
-      </p>
+      </div>
 
-      <p class="hero-date">
-        Roma → Bologna<br>
+      <div class="route">
+        <span>Roma</span>
+        <span class="route-line"></span>
+        <span>Bologna</span>
+      </div>
+
+      <div class="hero-days">
         Venerdì · Sabato · Domenica
-      </p>
-
-      <a href="#viaggio" class="button">
-        Scopri il viaggio
-      </a>
+      </div>
 
     </div>
 
-    <div class="scroll-hint">
-      ↓
+    <div class="scroll-down">
+      scopri il viaggio ↓
     </div>
 
   </header>
@@ -808,24 +1122,30 @@
 
   <!-- =========================
        INTRO
-  ========================== -->
+  ========================= -->
 
-  <section class="intro" id="viaggio">
+  <section class="intro">
 
-    <div class="section-inner">
+    <div class="container">
 
-      <div class="eyebrow">
-        Il nostro weekend
+      <div class="section-label">
+        Il nostro prossimo capitolo
       </div>
 
-      <h2>
+      <h2 class="section-title">
         Tre giorni a Bologna
       </h2>
 
-      <p>
-        Un treno, una città da scoprire, tanti posti dove mangiare
-        e soprattutto un po' di tempo tutto per noi.
-      </p>
+      <div class="intro-text">
+
+        <p>
+          Una valigia leggera, qualche posto nuovo da scoprire
+          e soprattutto una persona con cui condividere tutto.
+        </p>
+
+        <span class="heart">♥</span>
+
+      </div>
 
     </div>
 
@@ -834,154 +1154,151 @@
 
   <!-- =========================
        ITINERARIO
-  ========================== -->
+  ========================= -->
 
-  <main class="itinerary">
+  <section>
 
+    <div class="container">
 
-    <!-- VENERDÌ -->
-
-    <section class="day">
-
-      <div class="day-header">
-
-        <span class="day-number">
-          Giorno 01 · Venerdì
-        </span>
-
-        <h2>
-          Si parte
-        </h2>
-
-        <p class="day-description">
-          Roma, Bologna e il primo assaggio del weekend.
-        </p>
-
+      <div class="section-label">
+        Il programma
       </div>
+
+      <h2 class="section-title">
+        Il nostro viaggio
+      </h2>
+
+      <p class="section-intro">
+        Un itinerario pensato per perderci tra portici, piazze,
+        buon cibo e qualche momento tutto per noi.
+      </p>
 
 
       <div class="timeline">
 
+        <!-- DAY 1 -->
 
-        <div class="event">
+        <div class="day">
 
-          <div class="time">09:00</div>
+          <div class="day-header">
 
-          <div class="dot"></div>
+            <div class="day-number">
+              01
+            </div>
 
-          <div class="event-card">
+            <div class="day-name">
+              Venerdì
+            </div>
 
-            <div class="event-title">
+            <div class="day-date">
               Roma → Bologna
             </div>
 
-            <div class="event-description">
-              Si parte in treno. 🚆
-            </div>
-
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">11:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              09:00
+            </div>
 
             <div class="event-title">
-              Arrivo a Bologna
+              Si parte
             </div>
 
             <div class="event-description">
-              Primo giro per iniziare a conoscere la città.
+              Treno da Roma. Il viaggio comincia.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">13:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              11:00
+            </div>
 
             <div class="event-title">
-              Primo pranzo bolognese
+              Benvenuti a Bologna
             </div>
 
             <div class="event-description">
-              Perché a Bologna si comincia dalle cose importanti. 🍝
+              Arrivo e prima passeggiata per iniziare
+              a respirare l'atmosfera della città.
             </div>
 
           </div>
 
-        </div>
+
+          <div class="event">
+
+            <div class="event-time">
+              13:00
+            </div>
+
+            <div class="event-title">
+              Primo pranzo
+            </div>
+
+            <div class="event-description">
+              La prima vera missione del viaggio:
+              assaggiare Bologna.
+            </div>
+
+          </div>
 
 
-        <div class="event">
+          <div class="event">
 
-          <div class="time">14:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              14:00
+            </div>
 
             <div class="event-title">
               Check-in
             </div>
 
             <div class="event-description">
-              Sistemiamo le cose e ci prepariamo per il pomeriggio.
+              Sistemiamo le cose e ci prendiamo
+              un momento per noi.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">15:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              15:00
+            </div>
 
             <div class="event-title">
-              Bologna da scoprire
+              Piazza Maggiore
             </div>
 
             <div class="event-description">
-              Piazza Maggiore · Fontana del Nettuno · Portici
+              Fontana del Nettuno, portici e prime
+              passeggiate nel cuore della città.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event special">
-
-          <div class="time">20:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              20:00
+            </div>
 
             <div class="event-title">
-              Cena con tortellini
+              Cena
             </div>
 
             <div class="event-description">
-              La prima vera cena bolognese del nostro viaggio.
+              Tortellini, vino e la prima sera
+              del nostro weekend.
             </div>
 
           </div>
@@ -989,361 +1306,379 @@
         </div>
 
 
-      </div>
+        <!-- DAY 2 -->
 
-    </section>
+        <div class="day">
 
+          <div class="day-header">
 
-    <!-- SABATO -->
+            <div class="day-number">
+              02
+            </div>
 
-    <section class="day">
+            <div class="day-name">
+              Sabato
+            </div>
 
-      <div class="day-header">
+            <div class="day-date">
+              Bologna da vivere
+            </div>
 
-        <span class="day-number">
-          Giorno 02 · Sabato
-        </span>
-
-        <h2>
-          Bologna insieme
-        </h2>
-
-        <p class="day-description">
-          La giornata più piena. E forse anche quella più speciale.
-        </p>
-
-      </div>
+          </div>
 
 
-      <div class="timeline">
+          <div class="event">
 
-
-        <div class="event">
-
-          <div class="time">09:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              09:00
+            </div>
 
             <div class="event-title">
-              Colazione
+              Buongiorno Bologna
             </div>
 
             <div class="event-description">
-              Un buon caffè e si riparte. ☕
+              Colazione insieme e via, pronti
+              per una nuova giornata.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">10:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              10:00
+            </div>
 
             <div class="event-title">
-              Centro storico & Torri
+              Due torri
             </div>
 
             <div class="event-description">
-              Passeggiata nel cuore di Bologna e visita alle sue famose torri.
+              Passeggiata nel centro storico
+              tra le strade più belle della città.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">13:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              13:00
+            </div>
 
             <div class="event-title">
               Pranzo bolognese
             </div>
 
             <div class="event-description">
-              Un'altra tappa fondamentale del nostro tour gastronomico. 🍝
+              Un'altra pausa dedicata a una delle
+              cose che Bologna sa fare meglio.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">15:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              15:00
+            </div>
 
             <div class="event-title">
-              Finestrella di Via Piella
+              Finestrella
             </div>
 
             <div class="event-description">
-              Uno degli angoli più particolari della città.
+              Via Piella e il piccolo angolo di
+              Bologna che sembra quasi Venezia.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">16:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              16:00
+            </div>
 
             <div class="event-title">
               San Luca
             </div>
 
             <div class="event-description">
-              Passeggiata sotto i portici verso il Santuario. ⛪
+              Portici, passeggiata e uno dei simboli
+              più belli della città.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event">
-
-          <div class="time">18:30</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              18:30
+            </div>
 
             <div class="event-title">
               Aperitivo
             </div>
 
             <div class="event-description">
-              Un momento per fermarsi, bere qualcosa e goderci la serata. 🍹
+              Ci fermiamo un po', brindiamo
+              e ci godiamo la serata.
             </div>
 
           </div>
 
-        </div>
 
+          <div class="event">
 
-        <div class="event special">
-
-          <div class="time">20:30</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
+            <div class="event-time">
+              20:30
+            </div>
 
             <div class="event-title">
               Cena romantica
             </div>
 
             <div class="event-description">
-              Questa parte del programma la lasciamo un po' più segreta. ❤️
+              Una serata solo per noi.
             </div>
 
           </div>
 
         </div>
 
+
+        <!-- DAY 3 -->
+
+        <div class="day">
+
+          <div class="day-header">
+
+            <div class="day-number">
+              03
+            </div>
+
+            <div class="day-name">
+              Domenica
+            </div>
+
+            <div class="day-date">
+              Ultimi momenti
+            </div>
+
+          </div>
+
+
+          <div class="event">
+
+            <div class="event-time">
+              09:00
+            </div>
+
+            <div class="event-title">
+              Ultima colazione
+            </div>
+
+            <div class="event-description">
+              Con calma, prima di salutare Bologna.
+            </div>
+
+          </div>
+
+
+          <div class="event">
+
+            <div class="event-time">
+              10:00
+            </div>
+
+            <div class="event-title">
+              Ancora Bologna
+            </div>
+
+            <div class="event-description">
+              Portici, Ghetto Ebraico, Via Zamboni
+              e altri angoli da scoprire insieme.
+            </div>
+
+          </div>
+
+
+          <div class="event">
+
+            <div class="event-time">
+              13:00
+            </div>
+
+            <div class="event-title">
+              Ultimo pranzo
+            </div>
+
+            <div class="event-description">
+              L'ultimo assaggio prima di ripartire.
+            </div>
+
+          </div>
+
+
+          <div class="event">
+
+            <div class="event-time">
+              16:00
+            </div>
+
+            <div class="event-title">
+              Si torna a casa
+            </div>
+
+            <div class="event-description">
+              Bologna → Roma.
+              Ma il viaggio resta con noi.
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </section>
+    </div>
 
-
-    <!-- DOMENICA -->
-
-    <section class="day">
-
-      <div class="day-header">
-
-        <span class="day-number">
-          Giorno 03 · Domenica
-        </span>
-
-        <h2>
-          Gli ultimi momenti
-        </h2>
-
-        <p class="day-description">
-          Ancora qualche ora prima di tornare a casa.
-        </p>
-
-      </div>
-
-
-      <div class="timeline">
-
-
-        <div class="event">
-
-          <div class="time">09:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
-
-            <div class="event-title">
-              Colazione
-            </div>
-
-            <div class="event-description">
-              L'ultima colazione bolognese. ☕
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="event">
-
-          <div class="time">10:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
-
-            <div class="event-title">
-              Ultima passeggiata
-            </div>
-
-            <div class="event-description">
-              Portici · Ghetto · Via Zamboni e gli ultimi angoli da scoprire.
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="event">
-
-          <div class="time">13:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
-
-            <div class="event-title">
-              Ultimo pranzo bolognese
-            </div>
-
-            <div class="event-description">
-              Perché un weekend a Bologna non può finire senza un ultimo pranzo. 🍝
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="event special">
-
-          <div class="time">16:00</div>
-
-          <div class="dot"></div>
-
-          <div class="event-card">
-
-            <div class="event-title">
-              Bologna → Roma
-            </div>
-
-            <div class="event-description">
-              Si torna a casa. Ma con qualche ricordo in più. 🚆
-            </div>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-  </main>
+  </section>
 
 
   <!-- =========================
-       FRASE
-  ========================== -->
+       QUOTE
+  ========================= -->
 
-  <section class="quote">
+  <section class="quote-section">
 
-    <p>
-      "Tre giorni passano in fretta.
-      Ma quello che ci portiamo a casa rimane."
-    </p>
+    <div class="quote">
+      “Tre giorni passano in fretta.
+      Ma quello che ci portiamo a casa rimane.”
+    </div>
 
-    <span>
-      ♥
-    </span>
+    <div class="quote-author">
+      Per noi
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXTRA
+  ========================= -->
+
+  <section class="extras">
+
+    <div class="container">
+
+      <div class="section-label">
+        E non è finita qui
+      </div>
+
+      <h2 class="section-title">
+        Ci sono ancora sorprese
+      </h2>
+
+      <p class="section-intro">
+        Alcune cose le sappiamo già.
+        Altre le scopriremo strada facendo.
+      </p>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-icon">
+            🏨
+          </div>
+
+          <h3>
+            Hotel
+          </h3>
+
+          <p>
+            Un posto dove tornare dopo
+            una giornata piena di cose belle.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            🗺️
+          </div>
+
+          <h3>
+            La città
+          </h3>
+
+          <p>
+            Portici, piazze, vicoli e angoli
+            che scopriremo insieme.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            ❤️
+          </div>
+
+          <h3>
+            Noi
+          </h3>
+
+          <p>
+            La parte più importante
+            del viaggio.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </section>
 
 
   <!-- =========================
        VOUCHER
-  ========================== -->
+  ========================= -->
 
-  <section class="voucher-section" id="voucher">
+  <section class="voucher-section">
 
-    <div class="section-inner">
+    <div class="container">
 
-      <div class="eyebrow">
-        Un regalo speciale
+      <div class="section-label">
+        Il tuo biglietto
       </div>
 
-      <h2>
-        Il tuo voucher
+      <h2 class="section-title">
+        Un piccolo voucher
       </h2>
 
       <p class="voucher-intro">
-        C'è un piccolo biglietto che ti aspetta.
-        Clicca qui sotto per aprirlo.
+        Questo non è ancora il biglietto vero.
+        È molto più importante: è la promessa
+        che presto partiremo.
       </p>
 
-
-      <button
-        class="voucher-button"
-        onclick="openVoucher()"
-        aria-label="Apri il voucher di viaggio"
-      >
-
-        <div class="voucher-button-icon">
-          🎫
-        </div>
-
-        <div class="voucher-button-title">
-          Apri il tuo voucher
-        </div>
-
-        <div class="voucher-button-subtitle">
-          Clicca per scoprire il biglietto
-        </div>
-
+      <button class="voucher-button" id="openVoucher">
+        Apri il voucher
       </button>
 
     </div>
@@ -1352,161 +1687,203 @@
 
 
   <!-- =========================
-       VOUCHER MODAL
-  ========================== -->
+       MODAL VOUCHER
+  ========================= -->
 
-  <div
-    class="voucher-modal"
-    id="voucherModal"
-    onclick="closeVoucherOutside(event)"
-  >
+  <div class="modal" id="voucherModal">
 
-    <div
-      class="voucher"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Voucher di viaggio"
-    >
+    <div class="modal-content">
+
+      <button class="close-modal" id="closeVoucher" aria-label="Chiudi">
+        ×
+      </button>
 
 
-      <div class="voucher-top">
+      <div class="ticket">
 
-        <div class="voucher-label">
-          Voucher di viaggio
-        </div>
+        <!-- MAIN TICKET -->
 
-        <div class="voucher-destination">
-          BOLOGNA
-        </div>
+        <div class="ticket-main">
 
-        <div class="voucher-subtitle">
-          Un weekend tutto per noi
-        </div>
+          <div class="ticket-top">
 
-      </div>
+            <div>
 
+              <div class="ticket-label">
+                Voucher di viaggio
+              </div>
 
-      <div class="voucher-body">
+              <div class="ticket-title">
+                Un weekend<br>
+                tutto per noi
+              </div>
 
+            </div>
 
-        <div class="passenger">
-
-          <div class="passenger-label">
-            Passeggera
-          </div>
-
-          <div class="passenger-name">
-            Martina
-          </div>
-
-        </div>
-
-
-        <div class="voucher-details">
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Partenza
-            </span>
-
-            <span class="detail-value">
-              Roma
-            </span>
+            <div class="ticket-stamp">
+              Special trip
+            </div>
 
           </div>
 
 
-          <div class="detail">
+          <div class="ticket-route">
 
-            <span class="detail-label">
+            <div class="station">
+
+              <small>
+                Partenza
+              </small>
+
+              <strong>
+                ROMA
+              </strong>
+
+            </div>
+
+
+            <div class="route-arrow">
+              →
+            </div>
+
+
+            <div class="station">
+
+              <small>
+                Destinazione
+              </small>
+
+              <strong>
+                BOLOGNA
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="ticket-info">
+
+            <div>
+
+              <span class="info-label">
+                Partenza
+              </span>
+
+              <span class="info-value">
+                Venerdì
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <span class="info-label">
+                Ora
+              </span>
+
+              <span class="info-value">
+                09:00
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <span class="info-label">
+                Ritorno
+              </span>
+
+              <span class="info-value">
+                Domenica
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <span class="info-label">
+                Durata
+              </span>
+
+              <span class="info-value">
+                3 giorni
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="ticket-message">
+            Questo voucher dà diritto a un weekend speciale.
+            Il resto della sorpresa verrà svelato
+            strada facendo. ❤️
+          </div>
+
+
+          <div class="ticket-bottom">
+
+            <div class="passenger">
+              Passeggero:
+              <strong>Martina</strong>
+            </div>
+
+            <div class="ticket-code">
+              VOUCHER · MARTINA · BOLOGNA
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TEAR-OFF STUB -->
+
+        <div class="ticket-stub">
+
+          <div class="stub-top">
+
+            <div class="stub-label">
               Destinazione
-            </span>
+            </div>
 
-            <span class="detail-value">
+            <div class="stub-city">
+              BO
+            </div>
+
+            <div class="stub-subtitle">
               Bologna
-            </span>
+            </div>
 
           </div>
 
 
-          <div class="detail">
+          <div class="stub-center">
 
-            <span class="detail-label">
-              Durata
-            </span>
+            <div class="stub-date">
+              3D · 2N
+            </div>
 
-            <span class="detail-value">
-              3 giorni · 2 notti
-            </span>
-
-          </div>
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Partenza
-            </span>
-
-            <span class="detail-value">
-              Venerdì · ore 09:00
-            </span>
+            <div class="stub-time">
+              Weekend per due
+            </div>
 
           </div>
 
 
-          <div class="detail">
+          <div class="stub-code">
 
-            <span class="detail-label">
-              Rientro
-            </span>
+            MARTINA
 
-            <span class="detail-value">
-              Domenica · ore 16:00
-            </span>
+            <div class="barcode"></div>
 
           </div>
-
-
-          <div class="detail">
-
-            <span class="detail-label">
-              Compagnia
-            </span>
-
-            <span class="detail-value">
-              Da scoprire
-            </span>
-
-          </div>
-
 
         </div>
-
-
-        <div class="voucher-message">
-
-          Questo voucher dà diritto a un weekend speciale.
-          <br>
-          Il resto della sorpresa verrà svelato strada facendo. ❤️
-
-        </div>
-
-
-        <div class="voucher-code">
-          VOUCHER · MARTINA · BOLOGNA
-        </div>
-
-
-        <button
-          class="voucher-close"
-          onclick="closeVoucher()"
-        >
-          Chiudi voucher
-        </button>
-
 
       </div>
 
@@ -1516,126 +1893,31 @@
 
 
   <!-- =========================
-       EXTRA
-  ========================== -->
+       FINAL
+  ========================= -->
 
-  <section class="extra">
+  <section class="final">
 
-    <div class="section-inner">
+    <div class="final-content">
 
-      <div class="eyebrow">
-        Il viaggio
+      <div class="section-label">
+        E adesso...
       </div>
 
       <h2>
-        Ancora qualche dettaglio...
+        Pronta<br>
+        a partire?
       </h2>
 
+      <p>
+        La destinazione è Bologna.
+        La compagnia sei tu.
+      </p>
 
-      <div class="extra-grid">
+      <span class="final-heart">
+        ♥
+      </span>
 
-
-        <div class="extra-card">
-
-          <div class="icon">
-            🏨
-          </div>
-
-          <h3>
-            Dove dormiamo
-          </h3>
-
-          <p>
-            Qui aggiungeremo il nome dell'hotel,
-            l'indirizzo e il collegamento alla mappa.
-          </p>
-
-        </div>
-
-
-        <div class="extra-card">
-
-          <div class="icon">
-            🗺️
-          </div>
-
-          <h3>
-            La nostra Bologna
-          </h3>
-
-          <p>
-            Una mappa con tutti i luoghi
-            che visiteremo durante il weekend.
-          </p>
-
-        </div>
-
-
-        <div class="extra-card">
-
-          <div class="icon">
-            🎫
-          </div>
-
-          <h3>
-            Il tuo voucher
-          </h3>
-
-          <p>
-            Un piccolo biglietto per
-            un weekend tutto per noi.
-          </p>
-
-        </div>
-
-
-        <div class="extra-card">
-
-          <div class="icon">
-            📸
-          </div>
-
-          <h3>
-            I nostri ricordi
-          </h3>
-
-          <p>
-            Questa sezione potrà diventare
-            il piccolo album del nostro viaggio.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FINALE
-  ========================== -->
-
-  <section class="finale">
-
-    <div class="big-heart">
-      ♥
-    </div>
-
-    <h2>
-      Pronta a partire?
-    </h2>
-
-    <p>
-      Il programma è pronto.
-      La città ci aspetta.
-      Adesso manca solo una cosa...
-    </p>
-
-    <div class="signature">
-      Tu. ❤️
     </div>
 
   </section>
@@ -1643,66 +1925,76 @@
 
   <!-- =========================
        FOOTER
-  ========================== -->
+  ========================= -->
 
   <footer>
-
-    Un piccolo viaggio per una persona speciale · 2026
-
+    Roma → Bologna · Un viaggio tutto per noi · ❤️
   </footer>
 
 
   <!-- =========================
        JAVASCRIPT
-  ========================== -->
+  ========================= -->
 
   <script>
 
-    function openVoucher() {
+    const openVoucher = document.getElementById("openVoucher");
+    const closeVoucher = document.getElementById("closeVoucher");
+    const voucherModal = document.getElementById("voucherModal");
 
-      const modal = document.getElementById("voucherModal");
 
-      modal.classList.add("active");
+    // Apri il voucher
+
+    openVoucher.addEventListener("click", function () {
+
+      voucherModal.classList.add("active");
 
       document.body.style.overflow = "hidden";
 
-    }
+    });
 
 
-    function closeVoucher() {
+    // Chiudi il voucher
 
-      const modal = document.getElementById("voucherModal");
+    closeVoucher.addEventListener("click", function () {
 
-      modal.classList.remove("active");
+      voucherModal.classList.remove("active");
 
       document.body.style.overflow = "";
 
-    }
+    });
 
 
-    function closeVoucherOutside(event) {
+    // Chiudi cliccando fuori dal biglietto
 
-      if (event.target.id === "voucherModal") {
+    voucherModal.addEventListener("click", function (event) {
 
-        closeVoucher();
+      if (event.target === voucherModal) {
+
+        voucherModal.classList.remove("active");
+
+        document.body.style.overflow = "";
 
       }
 
-    }
+    });
 
 
-    document.addEventListener("keydown", function(event) {
+    // Chiudi con ESC
+
+    document.addEventListener("keydown", function (event) {
 
       if (event.key === "Escape") {
 
-        closeVoucher();
+        voucherModal.classList.remove("active");
+
+        document.body.style.overflow = "";
 
       }
 
     });
 
   </script>
-
 
 </body>
 </html>
