@@ -1,14 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>I nostri ricordi ❤️</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
@@ -16,7 +16,6 @@
   >
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -30,9 +29,7 @@
       min-height: 100vh;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: 'Cormorant Garamond', serif;
     }
 
@@ -49,13 +46,10 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 45px;
-
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 2px;
-
       color: #9b7054;
-
       transition: 0.3s ease;
     }
 
@@ -67,7 +61,6 @@
     .heart {
       font-size: 32px;
       margin-bottom: 20px;
-
       animation: heartbeat 2s infinite;
     }
 
@@ -97,14 +90,11 @@
     .intro-text {
       max-width: 650px;
       margin: auto;
-
       font-family: 'Cormorant Garamond', serif;
       font-size: 24px;
       line-height: 1.45;
-
       color: #765c4b;
     }
-
 
     /* GALLERY */
 
@@ -117,48 +107,45 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
+      gap: 28px 22px;
+    }
+
+    .photo-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .photo-card:first-child {
+      grid-column: span 2;
     }
 
     .photo-item {
       position: relative;
       overflow: hidden;
       cursor: pointer;
-
       background: #e9ddd0;
-
       aspect-ratio: 4 / 3;
-
-      box-shadow:
-        0 12px 30px rgba(75, 52, 40, 0.12);
-
-      transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+      box-shadow: 0 12px 30px rgba(75, 52, 40, 0.12);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .photo-item:first-child {
-      grid-column: span 2;
+    .photo-card:first-child .photo-item {
       aspect-ratio: 16 / 8;
     }
 
     .photo-item:hover {
       transform: translateY(-5px);
-      box-shadow:
-        0 18px 40px rgba(75, 52, 40, 0.18);
+      box-shadow: 0 18px 40px rgba(75, 52, 40, 0.18);
     }
 
     .photo-item img {
       width: 100%;
       height: 100%;
-
       display: block;
-
       object-fit: cover;
-
-      transition:
-        transform 0.6s ease,
-        filter 0.6s ease;
+      transition: transform 0.6s ease, filter 0.6s ease;
     }
 
     .photo-item:hover img {
@@ -170,18 +157,34 @@
       position: absolute;
       bottom: 15px;
       left: 15px;
-
       padding: 7px 12px;
-
       background: rgba(247, 241, 232, 0.9);
-
       font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 2px;
-
       color: #704a36;
     }
 
+    /* CAPTIONS */
+
+    .photo-caption {
+      text-align: center;
+      padding: 0 10px 12px;
+    }
+
+    .photo-caption h3 {
+      font-size: 25px;
+      font-weight: 600;
+      color: #704a36;
+      margin-bottom: 3px;
+    }
+
+    .photo-caption p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #806654;
+    }
 
     /* BOTTOM MESSAGE */
 
@@ -200,36 +203,25 @@
     .closing p {
       max-width: 600px;
       margin: auto;
-
       font-family: 'Cormorant Garamond', serif;
       font-size: 28px;
       font-style: italic;
-
       color: #704a36;
     }
-
 
     /* LIGHTBOX */
 
     .lightbox {
       position: fixed;
       inset: 0;
-
       background: rgba(40, 27, 20, 0.96);
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       padding: 30px;
-
       opacity: 0;
       visibility: hidden;
-
-      transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-
+      transition: opacity 0.3s ease, visibility 0.3s ease;
       z-index: 1000;
     }
 
@@ -241,14 +233,9 @@
     .lightbox-image {
       max-width: 90vw;
       max-height: 85vh;
-
       object-fit: contain;
-
-      box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4);
-
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
       transform: scale(0.95);
-
       transition: transform 0.3s ease;
     }
 
@@ -258,25 +245,17 @@
 
     .lightbox-close {
       position: absolute;
-
       top: 20px;
       right: 25px;
-
       width: 45px;
       height: 45px;
-
       border: none;
       background: rgba(255,255,255,0.08);
-
       color: white;
-
       border-radius: 50%;
-
       font-size: 28px;
       line-height: 1;
-
       cursor: pointer;
-
       transition: 0.3s ease;
     }
 
@@ -287,26 +266,16 @@
 
     .lightbox-button {
       position: absolute;
-
       top: 50%;
-
       transform: translateY(-50%);
-
       width: 55px;
       height: 55px;
-
       border: 1px solid rgba(255,255,255,0.2);
-
       border-radius: 50%;
-
       background: rgba(255,255,255,0.08);
-
       color: white;
-
       font-size: 30px;
-
       cursor: pointer;
-
       transition: 0.3s ease;
     }
 
@@ -324,28 +293,20 @@
 
     .lightbox-counter {
       position: absolute;
-
       bottom: 25px;
       left: 50%;
-
       transform: translateX(-50%);
-
       color: rgba(255,255,255,0.75);
-
       font-size: 11px;
-
       letter-spacing: 3px;
     }
-
 
     /* FOOTER */
 
     footer {
       background: #4b3428;
       color: #f7f1e8;
-
       text-align: center;
-
       padding: 55px 20px;
     }
 
@@ -359,27 +320,20 @@
       font-size: 23px;
     }
 
-
     /* ANIMATION */
 
     @keyframes heartbeat {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: scale(1);
       }
-
       50% {
         transform: scale(1.15);
       }
-
     }
-
 
     /* MOBILE */
 
     @media (max-width: 700px) {
-
       .page-header {
         padding: 50px 20px 35px;
       }
@@ -402,13 +356,20 @@
 
       .gallery {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 25px;
       }
 
-      .photo-item,
-      .photo-item:first-child {
+      .photo-card:first-child {
         grid-column: span 1;
+      }
+
+      .photo-card:first-child .photo-item,
+      .photo-item {
         aspect-ratio: 4 / 3;
+      }
+
+      .photo-caption h3 {
+        font-size: 24px;
       }
 
       .lightbox {
@@ -433,16 +394,11 @@
       .lightbox-next {
         right: 10px;
       }
-
     }
-
   </style>
-
 </head>
 
-
 <body>
-
 
   <!-- HEADER -->
 
@@ -452,20 +408,21 @@
       ← Torna al viaggio
     </a>
 
-    <div class="heart">
-      ❤️
-    </div>
+    <div class="heart">❤️</div>
 
     <div class="small-title">
       Una pagina solo per noi
     </div>
 
     <h1>
-      I nostri ricordi
+      I nostri
+      <span>ricordi</span>
     </h1>
 
     <p class="intro-text">
-          Alcuni scatti dei nostri viaggi ❤️ 
+      Prima di partire per una nuova avventura,
+      fermiamoci un momento a guardare quanta strada
+      abbiamo già fatto insieme.
     </p>
 
   </header>
@@ -474,114 +431,98 @@
   <!-- GALLERY -->
 
   <main class="gallery-section">
-
     <div class="gallery">
 
+      <!-- FOTO 1 -->
+      <div class="photo-card">
+        <div class="photo-item" data-index="0">
+          <img src="foto/foto1.jpg" alt="Un nostro ricordo" loading="lazy">
+          <span class="photo-number">Ricordo 01</span>
+        </div>
 
-      <div class="photo-item" data-index="0">
-
-        <img
-          src="foto/foto1.jpg"
-          alt="Un nostro ricordo"
-          loading="lazy"
-        >
-
-        <span class="photo-number">
-          Ricordo 01
-        </span>
-
+        <div class="photo-caption">
+          <h3>Le Marmore</h3>
+          <p>Bagnati ma felici <3 </p>
+        </div>
       </div>
 
 
-      <div class="photo-item" data-index="1">
+      <!-- FOTO 2 -->
+      <div class="photo-card">
+        <div class="photo-item" data-index="1">
+          <img src="foto/foto2.jpg" alt="Un nostro ricordo" loading="lazy">
+          <span class="photo-number">Ricordo 02</span>
+        </div>
 
-        <img
-          src="foto/foto2.jpg"
-          alt="Un nostro ricordo"
-          loading="lazy"
-        >
-
-        <span class="photo-number">
-          Ricordo 02
-        </span>
-
+        <div class="photo-caption">
+          <h3>Roma con Te</h3>
+          <p>Un ricordo delle nostre prime uscite insieme</p>
+        </div>
       </div>
 
 
-      <div class="photo-item" data-index="2">
+      <!-- FOTO 3 -->
+      <div class="photo-card">
+        <div class="photo-item" data-index="2">
+          <img src="foto/foto3.jpg" alt="Un nostro ricordo" loading="lazy">
+          <span class="photo-number">Ricordo 03</span>
+        </div>
 
-        <img
-          src="foto/foto3.jpg"
-          alt="Un nostro ricordo"
-          loading="lazy"
-        >
-
-        <span class="photo-number">
-          Ricordo 03
-        </span>
-
+        <div class="photo-caption">
+          <h3>Il Nivolet</h3>
+          <p>Una vacanza da ricordare...soprattutto per le Marmotte :P</p>
+        </div>
       </div>
 
 
-      <div class="photo-item" data-index="3">
+      <!-- FOTO 4 -->
+      <div class="photo-card">
+        <div class="photo-item" data-index="3">
+          <img src="foto/foto4.jpg" alt="Un nostro ricordo" loading="lazy">
+          <span class="photo-number">Ricordo 04</span>
+        </div>
 
-        <img
-          src="foto/foto4.jpg"
-          alt="Un nostro ricordo"
-          loading="lazy"
-        >
-
-        <span class="photo-number">
-          Ricordo 04
-        </span>
-
+        <div class="photo-caption">
+          <h3>TuttoMax</h3>
+          <p>Road To Milan</p>
+        </div>
       </div>
 
 
-      <div class="photo-item" data-index="4">
+      <!-- FOTO 5 -->
+      <div class="photo-card">
+        <div class="photo-item" data-index="4">
+          <img src="foto/foto5.jpg" alt="Un nostro ricordo" loading="lazy">
+          <span class="photo-number">Ricordo 05</span>
+        </div>
 
-        <img
-          src="foto/foto5.jpg"
-          alt="Un nostro ricordo"
-          loading="lazy"
-        >
-
-        <span class="photo-number">
-          Ricordo 05
-        </span>
-
+        <div class="photo-caption">
+          <h3>Roma dall'alto</h3>
+          <p>Una visione fantastica!</p>
+        </div>
       </div>
-
 
     </div>
-
   </main>
 
 
   <!-- CLOSING -->
 
   <section class="closing">
-
     <div class="closing-line"></div>
 
     <p>
       “E questo è solo uno dei tanti capitoli
       che dobbiamo ancora scrivere insieme.” ❤️
     </p>
-
   </section>
 
 
   <!-- FOOTER -->
 
   <footer>
-
-    <div class="heart">
-      ❤️
-    </div>
-
-
-
+    <div class="heart">❤️</div>
+    <p>Noi, sempre.</p>
   </footer>
 
 
@@ -601,7 +542,6 @@
       ×
     </button>
 
-
     <button
       class="lightbox-button lightbox-prev"
       id="lightboxPrev"
@@ -610,14 +550,12 @@
       ‹
     </button>
 
-
     <img
       class="lightbox-image"
       id="lightboxImage"
       src=""
       alt="Ricordo"
     >
-
 
     <button
       class="lightbox-button lightbox-next"
@@ -626,7 +564,6 @@
     >
       ›
     </button>
-
 
     <div
       class="lightbox-counter"
@@ -639,7 +576,6 @@
 
 
   <script>
-
     const photoItems =
       document.querySelectorAll(".photo-item");
 
@@ -664,9 +600,7 @@
 
     const photos =
       Array.from(photoItems).map(function(item) {
-
         return item.querySelector("img").src;
-
       });
 
 
@@ -674,143 +608,90 @@
 
 
     function openPhoto(index) {
-
       currentPhoto = index;
 
-      lightboxImage.src =
-        photos[currentPhoto];
+      lightboxImage.src = photos[currentPhoto];
 
       lightboxCounter.textContent =
-        (currentPhoto + 1) +
-        " / " +
-        photos.length;
+        (currentPhoto + 1) + " / " + photos.length;
 
       lightbox.classList.add("active");
 
-      lightbox.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+      lightbox.setAttribute("aria-hidden", "false");
 
       document.body.style.overflow = "hidden";
-
     }
 
 
     function closePhoto() {
-
       lightbox.classList.remove("active");
 
-      lightbox.setAttribute(
-        "aria-hidden",
-        "true"
-      );
+      lightbox.setAttribute("aria-hidden", "true");
 
       document.body.style.overflow = "";
-
     }
 
 
     function showPreviousPhoto() {
-
       currentPhoto =
-        (currentPhoto - 1 + photos.length) %
-        photos.length;
+        (currentPhoto - 1 + photos.length) % photos.length;
 
-      lightboxImage.src =
-        photos[currentPhoto];
+      lightboxImage.src = photos[currentPhoto];
 
       lightboxCounter.textContent =
-        (currentPhoto + 1) +
-        " / " +
-        photos.length;
-
+        (currentPhoto + 1) + " / " + photos.length;
     }
 
 
     function showNextPhoto() {
-
       currentPhoto =
-        (currentPhoto + 1) %
-        photos.length;
+        (currentPhoto + 1) % photos.length;
 
-      lightboxImage.src =
-        photos[currentPhoto];
+      lightboxImage.src = photos[currentPhoto];
 
       lightboxCounter.textContent =
-        (currentPhoto + 1) +
-        " / " +
-        photos.length;
-
+        (currentPhoto + 1) + " / " + photos.length;
     }
 
 
     photoItems.forEach(function(item, index) {
-
-      item.addEventListener(
-        "click",
-        function() {
-
-          openPhoto(index);
-
-        }
-      );
-
+      item.addEventListener("click", function() {
+        openPhoto(index);
+      });
     });
 
 
-    lightboxClose.addEventListener(
-      "click",
-      closePhoto
-    );
+    lightboxClose.addEventListener("click", closePhoto);
+
+    lightboxPrev.addEventListener("click", showPreviousPhoto);
+
+    lightboxNext.addEventListener("click", showNextPhoto);
 
 
-    lightboxPrev.addEventListener(
-      "click",
-      showPreviousPhoto
-    );
-
-
-    lightboxNext.addEventListener(
-      "click",
-      showNextPhoto
-    );
-
-
-    lightbox.addEventListener(
-      "click",
-      function(event) {
-
-        if (event.target === lightbox) {
-          closePhoto();
-        }
-
+    lightbox.addEventListener("click", function(event) {
+      if (event.target === lightbox) {
+        closePhoto();
       }
-    );
+    });
 
 
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (!lightbox.classList.contains("active")) {
-          return;
-        }
-
-        if (event.key === "Escape") {
-          closePhoto();
-        }
-
-        if (event.key === "ArrowLeft") {
-          showPreviousPhoto();
-        }
-
-        if (event.key === "ArrowRight") {
-          showNextPhoto();
-        }
-
+    document.addEventListener("keydown", function(event) {
+      if (!lightbox.classList.contains("active")) {
+        return;
       }
-    );
+
+      if (event.key === "Escape") {
+        closePhoto();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPreviousPhoto();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextPhoto();
+      }
+    });
 
 
     /* SWIPE SU MOBILE */
@@ -819,41 +700,26 @@
     let touchEndX = 0;
 
 
-    lightbox.addEventListener(
-      "touchstart",
-      function(event) {
-
-        touchStartX =
-          event.changedTouches[0].screenX;
-
-      },
-      { passive: true }
-    );
+    lightbox.addEventListener("touchstart", function(event) {
+      touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
 
 
-    lightbox.addEventListener(
-      "touchend",
-      function(event) {
+    lightbox.addEventListener("touchend", function(event) {
+      touchEndX = event.changedTouches[0].screenX;
 
-        touchEndX =
-          event.changedTouches[0].screenX;
+      const distance = touchEndX - touchStartX;
 
-        const distance =
-          touchEndX - touchStartX;
+      if (Math.abs(distance) < 50) {
+        return;
+      }
 
-        if (Math.abs(distance) < 50) {
-          return;
-        }
-
-        if (distance > 0) {
-          showPreviousPhoto();
-        } else {
-          showNextPhoto();
-        }
-
-      },
-      { passive: true }
-    );
+      if (distance > 0) {
+        showPreviousPhoto();
+      } else {
+        showNextPhoto();
+      }
+    }, { passive: true });
 
   </script>
 
